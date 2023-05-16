@@ -1,7 +1,7 @@
 #footer{
     display: flex;
     width: 100vw;
-    height: 5vh;
+    height: 3.5vh;
     background-color: #4E6143;
     align-items: center;
     justify-content: space-between;
@@ -9,22 +9,21 @@
     bottom: 0;
 }
 #direitos{
-    color: rgb(156, 156, 156);
-    font-size: 0.8w;
-    padding-left: 0.5vw;
+    color: rgb(184, 184, 184);
+    font-size: 0.7vw;
     align-items: center;
+    padding-left: 0.8vw;
+}
+.button-ft{
+    font-size: 0.9vw;
+    color: white;
+    background-color: transparent;
+    border: none;
 }
 #botoes{
     align-items: center;
     padding-right: 0.5vw;
 }
-button{
-    border: none;
-    background-color: transparent;
-    border-radius: 20px;
-    color:white;
-    font-size: 1.1vw;
-}
 .btn-icon{
-    font-size: 1.4vw;
+    font-size: 1.15vw;
 }

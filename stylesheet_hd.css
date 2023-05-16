@@ -1,19 +1,20 @@
 #navbar{
     display: inline-block;
     min-width: 100%;
-    height: 22vh;
+    height: 18vh;
 }
 #container-header{
-    height: 14vh;    
+    height: 12vh;    
     background-color: #9DBF89;
     display: flex;
     justify-content: space-around;
 }
 #container-frete{
     width: 100vw;
+    height: 5vh;
 }
 #logo{
-    width: 18vw;
+    width: 12vw;
 }
 #img-logo{
     padding: 5px;
@@ -43,11 +44,12 @@
     display: flex;
     justify-content: space-between;
 }
-button{
-    height: 40%;
+.btn{
     border: none;
     background-color: transparent;
-    border-radius: 20px;
+}
+.btn_options{
+    height: 70%;
 }
 .btn_options:hover{
     background-color: #c5dbb9;
@@ -59,23 +61,42 @@ button{
 }
 #menu{
     display: flex;
-    width: 35vw;
+    width: 25vw;
     align-items: center;
-    font-size: 1.2vw;
-    justify-content: center;
+    font-size: 0.8vw;
+    justify-content: space-between;
+    margin-top: -2vh;
 }
 .icons{
     width: 40%;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
 }
 .size-icon{
-    font-size: 5.5vh;
+    font-size: 3.5vh;
+    padding-right: 0.3vw;
 }
-.size-txt{
-    font-size: 1.3vw;
+#basket{
+    width: 100%;
+    height: 30%;
+}
+#chat{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    text-align: left;
+}
+#login{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    text-align: left;
+    
 }
 #frete{
     display: flex;
-    min-height: 7vh;
+    height: 3vh;
     background-color: #E0E4DD;
     align-content: center;
     align-items: center;
@@ -83,27 +104,19 @@ button{
     position: relative;
 }
 #icon-caminhao{
-    width: 2.5vw;
-    height: auto;
+    width: 1.65vw;
+    margin-right: 1.5vw;
+    align-items: center;
+    justify-content: right;
 }
 #txt-frete{
     display: inline;
+    font-size: 16px;
+    font-weight: 700; 
+    color: #B28B00; 
+    margin-left: -1vw;
 }
-#basket{
-    width: 100%;
-    height: 100%;
-    padding-bottom: 1vh;
-}
-#chat{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    text-align: left;
-}
-#login{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    text-align: left;
-    justify-content: space-between;
+#txt-comprasAcima{
+    font-size: 12px; 
+    padding-left: 0.8vw;
 }
