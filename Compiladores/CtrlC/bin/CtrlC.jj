@@ -1,0 +1,299 @@
+PARSER_BEGIN(CtrlC)
+import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List; 
+import Tables.SymbolTable;
+public class CtrlC
+{
+  
+  public static void main(String [] args) throws TokenMgrError, ParseException
+  {
+    System.out.println("Digite o nome do arquivo:");
+    Scanner scan = new Scanner(System.in);
+    String path = System.getProperty("user.dir");
+    path = path + "\\" + scan.next();
+    try
+    {
+      CtrlC ctrlc = new CtrlC(new FileInputStream(path));
+      ctrlc.iniciar();
+    }
+    catch (FileNotFoundException e)
+    {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+}
+
+PARSER_END(CtrlC)
+
+/*Regras para o analisador léxico. */
+
+//Leituras à serem ignoradas.
+SKIP :
+{
+  " "
+| 	"\n"
+| 	"\t"
+| 	"\r\n"
+| 	"\r"
+}
+
+//Leituras à serem identificadas.
+TOKEN :
+{
+  < SOMA : "+" >
+| 	< SUB : "-" >
+| 	< MULT : "*" >
+| 	< DIV : "/" >
+| 	< MOD : "%" >
+| 	< PARENTHESESO : "(" >
+| 	< PARENTHESESC : ")" >
+| 	< CHAVESA : "{" >
+| 	< CHAVESF : "}" >
+| 	< PONTOVIR : ";" >
+| 	< ATRIBUICAO : "=" >
+| 	< AND : "&&" >
+| 	< OR : "||" >
+| 	< EQUAL : "==" >
+| 	< DIFFERENT : "!=" >
+| 	< MAIOR : ">" >
+| 	< MENOR : "<" >
+| 	< MAIORIGUAL : ">=" >
+| 	< MENORIGUAL : "<=" >
+| 	< ATRIBUISOMA : "+=" >
+| 	< ATRIBUISUB : "-=" >
+| 	< INC : "++" >
+| 	< DEC : "--" >
+| 	< MAIN : "main" >
+| 	< IF : "if" >
+| 	< ELSE : "else" >
+| 	< INT : "int" >
+| 	< FLOAT : "float" >
+| 	< DOUBLE : "double" >
+| 	< CHAR : "char" >
+| 	< PRINT : "print" >
+| 	< FOR : "for" >
+| 	< WHILE : "while" >
+| 	< VOID : "void" >
+| 	< RETURN : "return" >
+| 	< NUM :
+    ([ "0"-"9" ])+
+    (
+      [ "." ] ([ "0"-"9" ])+
+    )? >
+| 	< ID : [ "a"-"z", "A"-"Z" ] ([ "a"-"z", "A"-"Z", "0"-"9", "_" ])* >
+}
+
+void iniciar() :
+{
+  Token t;
+  List < SymbolTable > symbolTable = new ArrayList < SymbolTable > ();
+  List < SymbolTable > keywordsTable = new ArrayList < SymbolTable > ();
+}
+{	
+  (
+    < MAIN >			
+    {
+      System.out.println("Palavra reservada main");
+      keywordsTable.add(new SymbolTable("Main", "MAIN", "Palavra Reservada", "None"));
+    }
+  | 	< IF >			
+    {
+      System.out.println("Palavra reservada if");
+      keywordsTable.add(new SymbolTable("If", "IF", "Palavra Reservada", "None"));
+    }
+  | 	< ELSE >			
+    {
+      System.out.println("Palavra reservada else");
+      keywordsTable.add(new SymbolTable("Else", "ELSE", "Palavra Reservada", "None"));
+    }
+  | 	< INT >			
+    {
+      System.out.println("Palavra reservada int");
+      keywordsTable.add(new SymbolTable("Int", "INT", "Palavra Reservada", "None"));
+    }
+  | 	< FLOAT >			
+    {
+      System.out.println("Palavra reservada float");
+      keywordsTable.add(new SymbolTable("Float", "FLOAT", "Palavra Reservada", "None"));
+      
+    }
+  | 	< DOUBLE >		
+    {
+      System.out.println("Palavra reservada double");
+      keywordsTable.add(new SymbolTable("Double", "DOUBLE", "Palavra Reservada", "None"));
+    }
+  | 	< CHAR >			
+    {
+      System.out.println("Palavra reservada char");
+      keywordsTable.add(new SymbolTable("Char", "CHAR", "Palavra Reservada", "None"));
+      
+    }
+  | 	< PRINT >			
+    {
+      System.out.println("Palavra reservada print");
+      keywordsTable.add(new SymbolTable("Print", "PRINT", "Palavra Reservada", "None"));
+    }
+  | 	< FOR >			
+    {
+      System.out.println("Palavra reservada for");
+      keywordsTable.add(new SymbolTable("For", "FOR", "Palavra Reservada", "None"));
+    }
+  | 	< WHILE >			
+    {
+      System.out.println("Palavra reservada while");
+      keywordsTable.add(new SymbolTable("While", "WHILE", "Palavra Reservada", "None"));
+    }
+  | 	< VOID >			
+    {
+      System.out.println("Palavra reservada void");
+      keywordsTable.add(new SymbolTable("Void", "VOID", "Palavra Reservada", "None"));
+    }
+  | 	< RETURN >		
+    {
+      System.out.println("Palavra reservada return");
+      keywordsTable.add(new SymbolTable("Return", "RETURN", "Palavra Reservada", "None"));
+    }
+  | 	< SOMA >			
+    {
+      System.out.println("Operador +");
+      symbolTable.add(new SymbolTable("+", "SOMA", "Operador", "None"));
+    }
+  | 	< SUB >			
+    {
+      System.out.println("Operador -");
+      symbolTable.add(new SymbolTable("-", "SUB", "Operador", "None"));
+    }
+  | 	< DIV >			
+    {
+      System.out.println("Operador /");
+      symbolTable.add(new SymbolTable("/", "DIV", "Operador", "None"));
+    }
+  | 	< MULT >			
+    {
+      System.out.println("Operador *");
+      symbolTable.add(new SymbolTable("*", "MULT", "Operador", "None"));
+    }
+  | 	< MOD >			
+    {
+      System.out.println("Operador %");
+      symbolTable.add(new SymbolTable("%", "MOD", "Operador", "None"));
+    }
+  | 	< ATRIBUICAO >	
+    {
+      System.out.println("Operador =");
+      symbolTable.add(new SymbolTable("=", "ATRIBUICAO", "Operador", "None"));
+    }
+  | 	< AND >			
+    {
+      System.out.println("Operador AND(&&)");
+      symbolTable.add(new SymbolTable("&&", "AND", "Operador", "None"));
+    }
+  | 	< OR >			
+    {
+      System.out.println("Operador OR(||)");
+      symbolTable.add(new SymbolTable("||", "OR", "Operador", "None"));
+    }
+  | 	< EQUAL >			
+    {
+      System.out.println("Operador IGUAL(==)");
+      symbolTable.add(new SymbolTable("==", "EQUAL", "Operador", "None"));
+    }
+  | 	< DIFFERENT >		
+    {
+      System.out.println("Operador DIFERENTE(!=)");
+      symbolTable.add(new SymbolTable("!=", "DIFFERENT", "Operador", "None"));
+    }
+  | 	< MAIOR >			
+    {
+      System.out.println("Operador >");
+      symbolTable.add(new SymbolTable(" >", "MAIOR", "Operador", "None"));
+    }
+  | 	< MENOR >			
+    {
+      System.out.println("Operador <");
+      symbolTable.add(new SymbolTable("<", "MENOR", "Operador", "None"));
+    }
+  | 	< MAIORIGUAL >	
+    {
+      System.out.println("Operador >=");
+      symbolTable.add(new SymbolTable(" >=", "MAIORIGUAL", "Operador", "None"));
+    }
+  | 	< MENORIGUAL >	
+    {
+      System.out.println("Operador <=");
+      symbolTable.add(new SymbolTable("< =", "MENORIGUAL", "Operador", "None"));
+    }
+  | 	< ATRIBUISOMA >	
+    {
+      System.out.println("Operador +=");
+      symbolTable.add(new SymbolTable("+=", "ATRIBUISOMA", "Operador", "None"));
+    }
+  | 	< ATRIBUISUB >	
+    {
+      System.out.println("Operador -=");
+      symbolTable.add(new SymbolTable("-=", "ATRIBUISUB", "Operador", "None"));
+    }
+  | 	< INC >			
+    {
+      System.out.println("Operador INC(++)");
+      symbolTable.add(new SymbolTable("++", "INC", "Operador", "None"));
+    }
+  | 	< DEC >			
+    {
+      System.out.println("Operador DEC(--)");
+      symbolTable.add(new SymbolTable("--", "DEC", "Operador", "None"));
+    }
+  | 	< PARENTHESESO >	
+    {
+      System.out.println("Abre parenteses (");
+      symbolTable.add(new SymbolTable("(", "PARENTHESESO", "Operador", "None"));
+    }
+  | 	< PARENTHESESC >	
+    {
+      System.out.println("Fecha parenteses )");
+      symbolTable.add(new SymbolTable(")", "PARENTHESESC", "Operador", "None"));
+    }
+  | 	< CHAVESA >		
+    {
+      System.out.println("Abre chaves {");
+      symbolTable.add(new SymbolTable("{", "CHAVESA", "Operador", "None"));
+    }
+  | 	< CHAVESF >		
+    {
+      System.out.println("Fecha chaves }");
+      symbolTable.add(new SymbolTable("}", "CHAVESF", "Operador", "None"));
+    }
+  | 	< PONTOVIR >		
+    {
+      System.out.println("Ponto e virgula ;");
+      symbolTable.add(new SymbolTable(";", "PONTOVIR", "Operador", "None"));
+    }
+  | 	t = < ID >			
+    {
+      System.out.println("Achei uma palavra:" + t.image);
+      symbolTable.add(new SymbolTable(t.image, "ID", "Identificador", "Identificador"));
+    }
+  | t = < NUM >	
+    {
+      System.out.println("Achei um numero:" + t.image);
+      symbolTable.add(new SymbolTable(t.image, "NUM", "Constante", "Numero"));
+    }
+  )*
+  < EOF >
+  {
+    System.out.println();
+    System.out.println("Symbol Table:");
+    for(SymbolTable token : symbolTable) {
+		System.out.println("Symbol: " + token.symbol + "		Token: " + token.Tok + "		Category: " + token.categoria + "		Type: " + token.type);
+    }
+
+    System.out.println();
+    System.out.println("Keywords Table:");
+    for(SymbolTable token : keywordsTable) {
+		System.out.println("Word: " + token.symbol + "		Token: " + token.Tok + "		Category: " + token.categoria + "		Type: " + token.type);
+    }
+  }
+}
