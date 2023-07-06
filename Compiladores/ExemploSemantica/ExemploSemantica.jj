@@ -1,0 +1,134 @@
+
+
+
+
+PARSER_BEGIN(ExemploSemantica) 
+import java.io.*;
+
+public class ExemploSemantica { 
+	public static void main(String[] args) throws TokenMgrError, ParseException {
+		ExemploSemantica parser = new ExemploSemantica(System.in);
+		//while(true) { 
+			System.out.println("Digite uma expressao, exemplo: float x,y; ");
+			
+			parser.decl();
+			
+			System.out.println("Cadeia aceita");
+
+			//parser.decl(); 
+
+		//}
+	}
+} 
+PARSER_END(ExemploSemantica)
+
+
+SKIP: {
+  " "
+| "\n"
+| "\t"
+| "\r"
+| "\r\n"
+}
+
+TOKEN : { 
+  <ID : ["a"-"z"] >
+| <INT: "int" >
+| <FLOAT: "float" >
+}
+
+
+
+
+//decl → tipo varLista ;
+void decl():
+{
+	String s;
+}
+{
+(
+  					{ System.out.println("Entrei na del(), vou chamar tipo() agora"); }
+ 	s = tipo()		{
+	  					System.out.println("Tipo() retornou com o tipo de dado: " + s);
+	  					//tipo.tipodado = s;
+	  					//varlista.tipodado = s;
+	  					System.out.println("Vamos chamar a varLista() agora passando o tipo por argumento: " + s);
+					}
+ 	varLista(s) ";" {
+	  					System.out.println("Funcao varLista() retornou");			
+					}	
+|   <EOF>        		  
+)					{
+						 System.out.println("Fim. Retornando para main!");
+					}											
+}
+
+
+
+//tipo →  int | float
+String tipo():
+{
+}
+{
+  				{ System.out.println("Entrei na tipo()");  }
+ 	<INT>		{
+ 	  				System.out.println("Achei um tipo int! Retornando esse tipo");
+	  				//tipo.tipodado = "int"
+	  				return "int";
+	  			}
+|	<FLOAT>  	{
+  					System.out.println("Achei um tipo float! Retornando esse tipo");
+	  				//tipo.tipodado = "float"
+	  				return "float";
+	  			}			
+}
+
+
+
+//varLista → id varListaLinha
+void varLista(String s):
+{
+	Token t;
+}
+{
+  						{
+  						   System.out.println("Entrei na varLista() com o tipoDado: " + s);
+  						   //varlista.tipo = s;
+  						}
+	t=<ID> 				{
+	  						System.out.println("Achei um ID: " + t.image + ". Vamos buscar na tabela de simbolos se ele ja existe");
+							/*
+							if( Busca(t.image) == true) {
+							  print("Erro, id ja declarado");
+							}
+							else {
+							  //ID.tipo = s;
+							  //varListaLinha.tipo = s;
+							  Inserir(t.image, s);
+							}
+							*/
+							System.out.println("Vamos chamar varListaLinha() agora passando o tipo por argumento: " + s);
+	  					}
+	varListaLinha(s)	{  
+	  						 System.out.println("Funcao varListaLinha() retornou"); 
+	  					}
+}
+
+//varListaLinha → , varLista | lambda
+void varListaLinha(String s):
+{
+}
+{
+  					{
+  					    System.out.println("Entrei na varListaLinha() com o tipoDado: " + s);
+						//varListaLinha.tipo = s;
+  						System.out.println("Talvez chamar a varLista() agora, passando o tipoDado pra ela, ou nao chamar nada");
+  					 }
+ (
+	"," varLista(s)	{
+	  					System.out.println("Funcao varLista() retornou");
+	  					//varlista.tipo = varListaLinha.tipo;
+	  				}
+ )?
+	 			
+}

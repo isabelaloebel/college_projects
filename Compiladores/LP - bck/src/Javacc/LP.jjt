@@ -1,0 +1,328 @@
+PARSER_BEGIN(LP)
+import java.io.*;
+// import java.util.*;
+// import java.util.ArrayList;
+
+public class LP {
+    public static void main(String[] args) throws ParseException, IOException{
+    System.out.println("Digite o nome do arquivo:");
+    Scanner scan = new Scanner(System.in);
+    String arvore_arquivo = "arvore_" + scan;
+
+    String path = System.getProperty("user.dir");
+    path = path + "\\" + scan.next();
+
+    LP lp = new LP(new FileInputStream(path));
+    try{
+        SimpleNode node = lp.LP();
+        node.dump(, fileOut);
+      } catch (Exception e){
+          e.printStackTrace();
+      }
+    }
+}
+PARSER_END(LP)
+
+/*
+    Caracteres a serem ignorados pelo analisador
+ */
+SKIP : {
+    " "
+|   "\n"
+|   "\t"
+|   "\r\n"
+|   "\r"
+}
+
+/*
+    Tokens gerais da linguagem, incluem: palavras reservadas, operadores e delimitadores
+ */
+TOKEN : {
+    <MAIN: "main">
+|   <APARENTESES: "(">
+|   <FPARENTESES: ")">
+|   <ACHAVES: "{">
+|   <FCHAVES: "}">
+|   <INT: "int">
+|   <FLOAT: "float">
+|   <CHAR: "char">
+|   <VOID: "void">
+|   <PVIRGULA: ";">
+|   <SOMA: "+">
+|   <SUBTRACAO: "-">
+|   <DIVISAO: "/">
+|   <MULTIPLICACAO: "*">
+|   <ATRIBUICAO: "=">
+|   <PRINT: "print">
+|   <FOR: "for">
+|   <WHILE: "while">
+|   <IF: "if">
+|   <ELSE: "else">
+|   <RETURN: "return">
+|   <IGUALDADE: "==">
+|   <DIFERENTE: "!=">
+|   <MAIOR: ">">
+|   <MENOR: "<">
+|   <MAIORIGUAL: ">=">
+|   <MENORIGUAL: "<=">
+|   <VIRGULA: ",">
+|   <ATRIBUICAOSOMA: "+=">
+|   <ATRIBUICAOSUBTRACAO: "-=">
+|   <INC: "++">
+|   <DEC: "--">
+}
+
+
+/*
+    Tokens para reconhecimento de identificadores e numeros
+ */
+TOKEN : {
+    <ID: ["a"-"z", "A"-"Z"] (["a"-"z","A"-"Z","0"-"9","_"])*>
+|   <NUM: (["0"-"9"])+(["."](["0"-"9"])+)?>
+}
+
+/*
+    Regra inicial da gramática.
+*/
+SimpleNode LP() #MAIN :
+{   Token t;
+    List < SymbolTable > symbolTable = new ArrayList < SymbolTable > ();
+    List < SymbolTable > keywordsTable = new ArrayList < SymbolTable > ();
+}
+{
+    <INT> <MAIN> <APARENTESES> <FPARENTESES> <ACHAVES> Comandos() Return() <FCHAVES>
+    <EOF>
+    {return jjtThis;}
+}
+
+/*
+    Regra que verifica um token de comparacao 
+*/
+void Compare() #TOKENCOMPARADOR :
+{}
+{
+    (<IGUALDADE>) |
+    (<DIFERENTE>) |
+    (<MAIOR>) |
+    (<MENOR>) |
+    (<MAIORIGUAL>) |
+    (<MENORIGUAL>)
+}
+
+/*
+    Regra que verifica o token de tipo da variavel
+*/
+void Type() #TYPE :
+{}
+{
+    (<INT>) |
+    (<CHAR>) |
+    (<FLOAT>)
+}
+
+/*
+    Regra que verifica todos os comandos validos ou nenhum
+*/
+void Comandos() #COMANDOS :
+{}
+{
+    ((DeclaraVariavel() Comandos()) |
+    (For() Comandos()) |
+    (While() Comandos()) |
+    (If() Comandos()) |
+    (Print() Comandos()) |
+    (Operacao()) Comandos())?
+}
+
+/*
+    Regra que verifica uma declaracao de variavel
+*/
+void DeclaraVariavel() #VAR :
+{}
+{
+    (Type() Id() Atribuicao() IdOrValue() <PVIRGULA>)
+}
+
+/*
+    Regra que verifica um identificador ou numero imediato
+*/
+void IdOrValue() #IDORVALUE :
+{}
+{
+    (<ID>) |
+    (<NUM>)
+}
+
+/*
+    Regra que verifica uma funcao for
+*/
+void For() #FOR :
+{}
+{
+    <FOR> <APARENTESES> InputFor() <FPARENTESES> <ACHAVES> Comandos() <FCHAVES>
+}
+
+/*
+    Regra que verifica a estrutura de parametros de um for
+*/
+void InputFor() #PARAMETERSFOR :
+{}
+{
+    InitiateFor() <PVIRGULA> EndFor() <PVIRGULA> Id() IterateFor()
+}
+
+/*
+    Regra que verifica os parametros de iniciacao de um for
+*/
+void InitiateFor() #INITIATEFOR :
+{}
+{
+    (Type() Id() Atribuicao() IdOrValue())?
+}
+
+/*
+    Regra que verifica os parametros de finalizacao de um for
+*/
+void EndFor() #ENDFOR :
+{}
+{
+    (Id() Compare() IdOrValue())?
+}
+
+/*
+    Regra que verifica os parametros de iteracao de um for
+*/
+void IterateFor() #ITERATEFOR :
+{}
+{
+    ((<ATRIBUICAOSOMA> IdOrValue()) |
+    (<ATRIBUICAOSUBTRACAO> IdOrValue()) |
+    (<INC>) |
+    (<DEC>))?
+}
+
+/*
+    Regra que verifica a comparacao de dois numeros e/ou identificadores
+*/
+void CompareValue() #COMPAREVALUE :
+{}
+{
+    IdOrValue() Compare() IdOrValue()
+}
+
+/*
+    Regra que verifica a estrutura de um while
+*/
+void While() #WHILE :
+{}
+{
+    <WHILE> <APARENTESES> CompareValue() <FPARENTESES> <ACHAVES> Comandos() <FCHAVES>
+}
+
+/*
+    Regra que verifica a estrutura de um if
+ */
+void If() #IF :
+{}
+{
+    <IF> <APARENTESES> CompareValue() <FPARENTESES> <ACHAVES> Comandos() <FCHAVES> Else()
+}
+
+/*
+    Regra que verifica a estrutura de um else, podendo ou nao ser ausente em um if
+*/
+void Else() #ELSE :
+{}
+{
+    (<ELSE> <ACHAVES> Comandos() <FCHAVES>)?
+}
+
+/*
+    Regra que verifica a estrutura de um print
+ */
+void Print() #PRINT :
+{}
+{
+    <PRINT> <APARENTESES> Id() <FPARENTESES> <PVIRGULA>
+}
+
+/*
+    Regra que verifica a estrutura de um return
+*/
+void Return() #RETURN :
+{}
+{
+    <RETURN> IdOrValue() <PVIRGULA>
+}
+
+/*
+    Regra que verifica uma operacao de soma
+*/
+void Soma() #SOMA :
+{}
+{
+    <SOMA> IdOrValue() OperacaoRecursiva()
+}
+
+/*
+    Regra que verifica uma operacao de subtracao
+*/
+void Subtracao() #SUBTRACAO :
+{}
+{
+    <SUBTRACAO> IdOrValue() OperacaoRecursiva()
+}
+
+/*
+    Regra que verifica uma operacao de multiplicacao
+*/
+void Multiplicacao() #MULTIPLICACAO :
+{}
+{
+    <MULTIPLICACAO> IdOrValue() OperacaoRecursiva()
+}
+
+/*
+    Regra que verifica uma operacao de divisao
+*/
+void Divisao() #DIVISAO :
+{}
+{
+    <DIVISAO> IdOrValue() OperacaoRecursiva()
+}
+
+/*
+    Regra para verificar operacoes recursivamente
+*/
+void OperacaoRecursiva() #OPERACAORECURSIVA :
+{}
+{
+    (Divisao() | Soma() | Subtracao() | Multiplicacao())?
+}
+
+/*
+    Regra que verifica a estrutura de uma operacao
+*/
+void Operacao() #OPERACAO :
+{}
+{
+    Id() Atribuicao() IdOrValue() (Soma() | Subtracao() | Divisao() | Multiplicacao())? <PVIRGULA>
+}
+
+/*
+    Regra auxiliar para verificar um ID *Somente para efeito de visualizacao na arvore sintatica*
+*/
+void Id() #ID :
+{}
+{
+    <ID>
+}
+
+/*
+    Regra auxiliar para verificar uma atribuicao *Somente para efeito de visualizacao na arvore sintatica*
+*/
+void Atribuicao() #TOKENATRIBUICAO :
+{}
+{
+    <ATRIBUICAO>
+}

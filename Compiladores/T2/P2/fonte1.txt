@@ -1,0 +1,7 @@
+int main(){
+    int variavel_inteira = 5;
+    float variavel_pontoflutuante = 5.34;
+    variavel_inteira = variavel_pontoflutuante + 5 * 5;
+    print(variavel_pontoflutuante);
+    return 0;
+}
