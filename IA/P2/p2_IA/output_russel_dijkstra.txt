@@ -1,0 +1,101 @@
+
+Iteração #1
+Nó atual: Arad
+Custo total percorrido: 0
+Número de nós explorados: 0
+Caminhos possíveis:
+- Id: 0, Caminho: Arad -> Zerind, Custo: 75
+- Id: 1, Caminho: Arad -> Sibiu, Custo: 140
+- Id: 2, Caminho: Arad -> Timisoara, Custo: 118
+
+Iteração #2
+Nó atual: Zerind
+Custo total percorrido: 75
+Número de nós explorados: 1
+Caminhos possíveis:
+- Id: 3, Caminho: Zerind -> Oradea, Custo: 71
+
+Iteração #3
+Nó atual: Timisoara
+Custo total percorrido: 118
+Número de nós explorados: 2
+Caminhos possíveis:
+- Id: 7, Caminho: Timisoara -> Lugoj, Custo: 111
+
+Iteração #4
+Nó atual: Sibiu
+Custo total percorrido: 140
+Número de nós explorados: 3
+Caminhos possíveis:
+- Id: 4, Caminho: Sibiu -> Oradea, Custo: 151
+- Id: 5, Caminho: Sibiu -> Fagaras, Custo: 99
+- Id: 6, Caminho: Sibiu -> RimnicuVilcea, Custo: 80
+
+Iteração #5
+Nó atual: Oradea
+Custo total percorrido: 146
+Número de nós explorados: 4
+Caminhos possíveis:
+
+Iteração #6
+Nó atual: RimnicuVilcea
+Custo total percorrido: 220
+Número de nós explorados: 5
+Caminhos possíveis:
+- Id: 9, Caminho: RimnicuVilcea -> Pitesti, Custo: 97
+- Id: 10, Caminho: RimnicuVilcea -> Craiova, Custo: 146
+
+Iteração #7
+Nó atual: Lugoj
+Custo total percorrido: 229
+Número de nós explorados: 6
+Caminhos possíveis:
+- Id: 11, Caminho: Lugoj -> Mehadja, Custo: 70
+
+Iteração #8
+Nó atual: Fagaras
+Custo total percorrido: 239
+Número de nós explorados: 7
+Caminhos possíveis:
+- Id: 8, Caminho: Fagaras -> Bucharest, Custo: 211
+
+Iteração #9
+Nó atual: Mehadja
+Custo total percorrido: 299
+Número de nós explorados: 8
+Caminhos possíveis:
+- Id: 12, Caminho: Mehadja -> Dobreta, Custo: 75
+
+Iteração #10
+Nó atual: Pitesti
+Custo total percorrido: 317
+Número de nós explorados: 9
+Caminhos possíveis:
+- Id: 15, Caminho: Pitesti -> Bucharest, Custo: 101
+
+Iteração #11
+Nó atual: Craiova
+Custo total percorrido: 366
+Número de nós explorados: 10
+Caminhos possíveis:
+- Id: 14, Caminho: Craiova -> Pitesti, Custo: 138
+
+Iteração #12
+Nó atual: Dobreta
+Custo total percorrido: 374
+Número de nós explorados: 11
+Caminhos possíveis:
+- Id: 13, Caminho: Dobreta -> Craiova, Custo: 120
+
+Iteração #13
+Nó atual: Bucharest
+Custo total percorrido: 418
+Número de nós explorados: 12
+Caminhos possíveis:
+- Id: 16, Caminho: Bucharest -> Urziceni, Custo: 85
+- Id: 17, Caminho: Bucharest -> Giurgiu, Custo: 90
+
+Destino encontrado! Custo total: 418
+Menor caminho encontrado: [Arad -> Sibiu -> Fagaras -> Arad -> Sibiu -> RimnicuVilcea -> Pitesti -> Bucharest]
+Tamanho do caminho encontrado: 8
+Número de nós percorridos: 13

@@ -1,0 +1,699 @@
+Iteração #1
+Nó atual: 129
+Custo atual: 0
+Número de nós explorados: 0
+
+Iteração #2
+Nó atual: 60
+Custo atual: 166
+Número de nós explorados: 1
+
+Iteração #3
+Nó atual: 58
+Custo atual: 227
+Número de nós explorados: 2
+
+Iteração #4
+Nó atual: 54
+Custo atual: 287
+Número de nós explorados: 3
+
+Iteração #5
+Nó atual: 22
+Custo atual: 333
+Número de nós explorados: 4
+
+Iteração #6
+Nó atual: 57
+Custo atual: 407
+Número de nós explorados: 5
+
+Iteração #7
+Nó atual: 63
+Custo atual: 520
+Número de nós explorados: 6
+
+Iteração #8
+Nó atual: 66
+Custo atual: 561
+Número de nós explorados: 7
+
+Iteração #9
+Nó atual: 98
+Custo atual: 634
+Número de nós explorados: 8
+
+Iteração #10
+Nó atual: 100
+Custo atual: 747
+Número de nós explorados: 9
+
+Iteração #11
+Nó atual: 23
+Custo atual: 994
+Número de nós explorados: 10
+
+Iteração #12
+Nó atual: 19
+Custo atual: 1070
+Número de nós explorados: 11
+
+Iteração #13
+Nó atual: 99
+Custo atual: 1312
+Número de nós explorados: 12
+
+Iteração #14
+Nó atual: 103
+Custo atual: 1442
+Número de nós explorados: 13
+
+Iteração #15
+Nó atual: 109
+Custo atual: 1598
+Número de nós explorados: 14
+
+Iteração #16
+Nó atual: 130
+Custo atual: 1774
+Número de nós explorados: 15
+
+Iteração #17
+Nó atual: 108
+Custo atual: 1669
+Número de nós explorados: 16
+
+Iteração #18
+Nó atual: 50
+Custo atual: 1760
+Número de nós explorados: 17
+
+Iteração #19
+Nó atual: 89
+Custo atual: 1861
+Número de nós explorados: 18
+
+Iteração #20
+Nó atual: 71
+Custo atual: 1991
+Número de nós explorados: 19
+
+Iteração #21
+Nó atual: 72
+Custo atual: 2053
+Número de nós explorados: 20
+
+Iteração #22
+Nó atual: 90
+Custo atual: 2175
+Número de nós explorados: 21
+
+Iteração #23
+Nó atual: 85
+Custo atual: 2223
+Número de nós explorados: 22
+
+Iteração #24
+Nó atual: 48
+Custo atual: 2364
+Número de nós explorados: 23
+
+Iteração #25
+Nó atual: 97
+Custo atual: 2437
+Número de nós explorados: 24
+
+Iteração #26
+Nó atual: 43
+Custo atual: 2671
+Número de nós explorados: 25
+
+Iteração #27
+Nó atual: 18
+Custo atual: 2741
+Número de nós explorados: 26
+
+Iteração #28
+Nó atual: 27
+Custo atual: 2795
+Número de nós explorados: 27
+
+Iteração #29
+Nó atual: 26
+Custo atual: 2876
+Número de nós explorados: 28
+
+Iteração #30
+Nó atual: 96
+Custo atual: 2967
+Número de nós explorados: 29
+
+Iteração #31
+Nó atual: 101
+Custo atual: 3033
+Número de nós explorados: 30
+
+Iteração #32
+Nó atual: 87
+Custo atual: 3086
+Número de nós explorados: 31
+
+Iteração #33
+Nó atual: 75
+Custo atual: 3241
+Número de nós explorados: 32
+
+Iteração #34
+Nó atual: 79
+Custo atual: 3404
+Número de nós explorados: 33
+
+Iteração #35
+Nó atual: 15
+Custo atual: 3440
+Número de nós explorados: 34
+
+Iteração #36
+Nó atual: 16
+Custo atual: 3493
+Número de nós explorados: 35
+
+Iteração #37
+Nó atual: 25
+Custo atual: 3574
+Número de nós explorados: 36
+
+Iteração #38
+Nó atual: 17
+Custo atual: 3684
+Número de nós explorados: 37
+
+Iteração #39
+Nó atual: 28
+Custo atual: 3753
+Número de nós explorados: 38
+
+Iteração #40
+Nó atual: 29
+Custo atual: 3862
+Número de nós explorados: 39
+
+Iteração #41
+Nó atual: 0
+Custo atual: 3924
+Número de nós explorados: 40
+
+Iteração #42
+Nó atual: 7
+Custo atual: 4117
+Número de nós explorados: 41
+
+Iteração #43
+Nó atual: 45
+Custo atual: 4332
+Número de nós explorados: 42
+
+Iteração #44
+Nó atual: 36
+Custo atual: 4554
+Número de nós explorados: 43
+
+Iteração #45
+Nó atual: 41
+Custo atual: 4620
+Número de nós explorados: 44
+
+Iteração #46
+Nó atual: 44
+Custo atual: 4836
+Número de nós explorados: 45
+
+Iteração #47
+Nó atual: 30
+Custo atual: 5050
+Número de nós explorados: 46
+
+Iteração #48
+Nó atual: 84
+Custo atual: 5122
+Número de nós explorados: 47
+
+Iteração #49
+Nó atual: 21
+Custo atual: 5206
+Número de nós explorados: 48
+
+Iteração #50
+Nó atual: 24
+Custo atual: 5332
+Número de nós explorados: 49
+
+Iteração #51
+Nó atual: 70
+Custo atual: 5417
+Número de nós explorados: 50
+
+Iteração #52
+Nó atual: 76
+Custo atual: 5502
+Número de nós explorados: 51
+
+Iteração #53
+Nó atual: 20
+Custo atual: 5566
+Número de nós explorados: 52
+
+Iteração #54
+Nó atual: 83
+Custo atual: 5412
+Número de nós explorados: 53
+
+Iteração #55
+Nó atual: 93
+Custo atual: 5455
+Número de nós explorados: 54
+
+Iteração #56
+Nó atual: 92
+Custo atual: 5455
+Número de nós explorados: 55
+
+Iteração #57
+Nó atual: 20
+Custo atual: 5308
+Número de nós explorados: 56
+
+Iteração #58
+Nó atual: 93
+Custo atual: 5182
+Número de nós explorados: 56
+
+Iteração #59
+Nó atual: 40
+Custo atual: 4682
+Número de nós explorados: 56
+
+Iteração #60
+Nó atual: 37
+Custo atual: 4613
+Número de nós explorados: 57
+
+Iteração #61
+Nó atual: 46
+Custo atual: 4843
+Número de nós explorados: 58
+
+Iteração #62
+Nó atual: 8
+Custo atual: 5057
+Número de nós explorados: 59
+
+Iteração #63
+Nó atual: 1
+Custo atual: 5250
+Número de nós explorados: 60
+
+Iteração #64
+Nó atual: 142
+Custo atual: 5462
+Número de nós explorados: 61
+
+Iteração #65
+Nó atual: 2
+Custo atual: 5312
+Número de nós explorados: 62
+
+Iteração #66
+Nó atual: 9
+Custo atual: 5505
+Número de nós explorados: 63
+
+Iteração #67
+Nó atual: 47
+Custo atual: 5720
+Número de nós explorados: 64
+
+Iteração #68
+Nó atual: 38
+Custo atual: 5956
+Número de nós explorados: 65
+
+Iteração #69
+Nó atual: 39
+Custo atual: 6017
+Número de nós explorados: 66
+
+Iteração #70
+Nó atual: 34
+Custo atual: 6259
+Número de nós explorados: 67
+
+Iteração #71
+Nó atual: 10
+Custo atual: 6282
+Número de nós explorados: 68
+
+Iteração #72
+Nó atual: 149
+Custo atual: 6402
+Número de nós explorados: 69
+
+Iteração #73
+Nó atual: 5
+Custo atual: 6498
+Número de nós explorados: 70
+
+Iteração #74
+Nó atual: 4
+Custo atual: 6690
+Número de nós explorados: 71
+
+Iteração #75
+Nó atual: 32
+Custo atual: 7159
+Número de nós explorados: 72
+
+Iteração #76
+Nó atual: 33
+Custo atual: 7624
+Número de nós explorados: 73
+
+Iteração #77
+Nó atual: 31
+Custo atual: 7816
+Número de nós explorados: 74
+
+Iteração #78
+Nó atual: 3
+Custo atual: 6755
+Número de nós explorados: 75
+
+Iteração #79
+Nó atual: 6
+Custo atual: 6947
+Número de nós explorados: 76
+
+Iteração #80
+Nó atual: 42
+Custo atual: 7163
+Número de nós explorados: 77
+
+Iteração #81
+Nó atual: 145
+Custo atual: 7338
+Número de nós explorados: 78
+
+Iteração #82
+Nó atual: 127
+Custo atual: 7578
+Número de nós explorados: 79
+
+Iteração #83
+Nó atual: 140
+Custo atual: 7333
+Número de nós explorados: 80
+
+Iteração #84
+Nó atual: 144
+Custo atual: 7160
+Número de nós explorados: 81
+
+Iteração #85
+Nó atual: 139
+Custo atual: 7113
+Número de nós explorados: 82
+
+Iteração #86
+Nó atual: 33
+Custo atual: 6713
+Número de nós explorados: 83
+
+Iteração #87
+Nó atual: 6
+Custo atual: 6563
+Número de nós explorados: 83
+
+Iteração #88
+Nó atual: 31
+Custo atual: 6523
+Número de nós explorados: 83
+
+Iteração #89
+Nó atual: 42
+Custo atual: 6347
+Número de nós explorados: 83
+
+Iteração #90
+Nó atual: 31
+Custo atual: 6474
+Número de nós explorados: 83
+
+Iteração #91
+Nó atual: 35
+Custo atual: 6255
+Número de nós explorados: 83
+
+Iteração #92
+Nó atual: 56
+Custo atual: 6382
+Número de nós explorados: 84
+
+Iteração #93
+Nó atual: 61
+Custo atual: 6439
+Número de nós explorados: 85
+
+Iteração #94
+Nó atual: 59
+Custo atual: 6502
+Número de nós explorados: 86
+
+Iteração #95
+Nó atual: 55
+Custo atual: 6562
+Número de nós explorados: 87
+
+Iteração #96
+Nó atual: 62
+Custo atual: 6497
+Número de nós explorados: 88
+
+Iteração #97
+Nó atual: 118
+Custo atual: 6572
+Número de nós explorados: 89
+
+Iteração #98
+Nó atual: 119
+Custo atual: 6400
+Número de nós explorados: 90
+
+Iteração #99
+Nó atual: 120
+Custo atual: 6277
+Número de nós explorados: 91
+
+Iteração #100
+Nó atual: 34
+Custo atual: 5784
+Número de nós explorados: 92
+
+Iteração #101
+Nó atual: 31
+Custo atual: 5568
+Número de nós explorados: 92
+
+Iteração #102
+Nó atual: 143
+Custo atual: 5705
+Número de nós explorados: 92
+
+Iteração #103
+Nó atual: 33
+Custo atual: 5374
+Número de nós explorados: 93
+
+Iteração #104
+Nó atual: 9
+Custo atual: 5119
+Número de nós explorados: 93
+
+Iteração #105
+Nó atual: 47
+Custo atual: 4904
+Número de nós explorados: 93
+
+Iteração #106
+Nó atual: 55
+Custo atual: 4673
+Número de nós explorados: 93
+
+Iteração #107
+Nó atual: 38
+Custo atual: 4675
+Número de nós explorados: 93
+
+Iteração #108
+Nó atual: 46
+Custo atual: 4392
+Número de nós explorados: 93
+
+Iteração #109
+Nó atual: 44
+Custo atual: 4395
+Número de nós explorados: 93
+
+Iteração #110
+Nó atual: 8
+Custo atual: 4179
+Número de nós explorados: 93
+
+Iteração #111
+Nó atual: 30
+Custo atual: 4178
+Número de nós explorados: 93
+
+Iteração #112
+Nó atual: 141
+Custo atual: 4136
+Número de nós explorados: 93
+
+Iteração #113
+Nó atual: 1
+Custo atual: 3986
+Número de nós explorados: 94
+
+Iteração #114
+Nó atual: 30
+Custo atual: 4055
+Número de nós explorados: 94
+
+Iteração #115
+Nó atual: 20
+Custo atual: 3939
+Número de nós explorados: 94
+
+Iteração #116
+Nó atual: 138
+Custo atual: 3855
+Número de nós explorados: 94
+
+Iteração #117
+Nó atual: 20
+Custo atual: 3825
+Número de nós explorados: 95
+
+Iteração #118
+Nó atual: 128
+Custo atual: 4219
+Número de nós explorados: 95
+
+Iteração #119
+Nó atual: 76
+Custo atual: 3752
+Número de nós explorados: 96
+
+Iteração #120
+Nó atual: 137
+Custo atual: 3638
+Número de nós explorados: 96
+
+Iteração #121
+Nó atual: 70
+Custo atual: 3688
+Número de nós explorados: 97
+
+Iteração #122
+Nó atual: 136
+Custo atual: 3603
+Número de nós explorados: 97
+
+Iteração #123
+Nó atual: 13
+Custo atual: 3450
+Número de nós explorados: 98
+
+Iteração #124
+Nó atual: 78
+Custo atual: 3485
+Número de nós explorados: 99
+
+Iteração #125
+Nó atual: 12
+Custo atual: 3529
+Número de nós explorados: 100
+
+Iteração #126
+Nó atual: 94
+Custo atual: 3569
+Número de nós explorados: 101
+
+Iteração #127
+Nó atual: 80
+Custo atual: 3606
+Número de nós explorados: 102
+
+Iteração #128
+Nó atual: 95
+Custo atual: 3646
+Número de nós explorados: 103
+
+Iteração #129
+Nó atual: 82
+Custo atual: 3693
+Número de nós explorados: 104
+
+Iteração #130
+Nó atual: 77
+Custo atual: 3854
+Número de nós explorados: 105
+
+Iteração #131
+Nó atual: 88
+Custo atual: 3991
+Número de nós explorados: 106
+
+Iteração #132
+Nó atual: 126
+Custo atual: 4502
+Número de nós explorados: 107
+
+Iteração #133
+Nó atual: 74
+Custo atual: 3906
+Número de nós explorados: 108
+
+Iteração #134
+Nó atual: 133
+Custo atual: 4097
+Número de nós explorados: 109
+
+Iteração #135
+Nó atual: 148
+Custo atual: 3883
+Número de nós explorados: 110
+
+Iteração #136
+Nó atual: 147
+Custo atual: 4298
+Número de nós explorados: 111
+
+Iteração #137
+Nó atual: 74
+Custo atual: 3794
+Número de nós explorados: 112
+
+Iteração #138
+Nó atual: 81
+Custo atual: 3699
+Número de nós explorados: 112
+
+Iteração #139
+Nó atual: 11
+Custo atual: 3754
+Número de nós explorados: 113
+
+Destino encontrado! Custo total: 3754
+Caminho encontrado: [129 -> 60 -> 58 -> 54 -> 22 -> 57 -> 63 -> 66 -> 98 -> 100 -> 23 -> 19 -> 99 -> 103 -> 109 -> 130 -> 108 -> 50 -> 89 -> 71 -> 72 -> 90 -> 85 -> 48 -> 97 -> 43 -> 18 -> 27 -> 26 -> 96 -> 101 -> 87 -> 75 -> 79 -> 15 -> 16 -> 25 -> 17 -> 28 -> 29 -> 0 -> 7 -> 45 -> 36 -> 41 -> 44 -> 30 -> 84 -> 21 -> 24 -> 70 -> 76 -> 20 -> 83 -> 93 -> 92 -> 40 -> 37 -> 46 -> 8 -> 1 -> 142 -> 2 -> 9 -> 47 -> 38 -> 39 -> 34 -> 10 -> 149 -> 5 -> 4 -> 32 -> 33 -> 31 -> 3 -> 6 -> 42 -> 145 -> 127 -> 140 -> 144 -> 139 -> 35 -> 56 -> 61 -> 59 -> 55 -> 62 -> 118 -> 119 -> 120 -> 143 -> 141 -> 138 -> 128 -> 137 -> 136 -> 13 -> 78 -> 12 -> 94 -> 80 -> 95 -> 82 -> 77 -> 88 -> 126 -> 74 -> 133 -> 148 -> 147 -> 81 -> 11]
+Tamanho do caminho encontrado: 114
+Número de nós percorridos: 114
