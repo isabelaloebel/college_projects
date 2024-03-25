@@ -1,0 +1,64 @@
+
+Iteração #1
+Nó atual: Arad
+Custo acumulado: 0
+Número de nós explorados: 1
+Caminhos possíveis:
+- Id: 0, Caminho: Arad -> Zerind, Custo: 75
+- Id: 1, Caminho: Arad -> Sibiu, Custo: 140
+- Id: 2, Caminho: Arad -> Timisoara, Custo: 118
+
+Iteração #2
+Nó atual: Zerind
+Custo acumulado: 75
+Número de nós explorados: 2
+Caminhos possíveis:
+- Id: 3, Caminho: Zerind -> Oradea, Custo: 71
+
+Iteração #3
+Nó atual: Sibiu
+Custo acumulado: 140
+Número de nós explorados: 3
+Caminhos possíveis:
+- Id: 5, Caminho: Sibiu -> Fagaras, Custo: 99
+- Id: 6, Caminho: Sibiu -> RimnicuVilcea, Custo: 80
+
+Iteração #4
+Nó atual: Timisoara
+Custo acumulado: 118
+Número de nós explorados: 4
+Caminhos possíveis:
+- Id: 7, Caminho: Timisoara -> Lugoj, Custo: 111
+
+Iteração #5
+Nó atual: Oradea
+Custo acumulado: 146
+Número de nós explorados: 5
+Caminhos possíveis:
+
+Iteração #6
+Nó atual: Fagaras
+Custo acumulado: 239
+Número de nós explorados: 6
+Caminhos possíveis:
+- Id: 8, Caminho: Fagaras -> Bucharest, Custo: 211
+
+Iteração #7
+Nó atual: RimnicuVilcea
+Custo acumulado: 220
+Número de nós explorados: 7
+Caminhos possíveis:
+- Id: 9, Caminho: RimnicuVilcea -> Pitesti, Custo: 97
+- Id: 10, Caminho: RimnicuVilcea -> Craiova, Custo: 146
+
+Iteração #8
+Nó atual: Lugoj
+Custo acumulado: 229
+Número de nós explorados: 8
+Caminhos possíveis:
+- Id: 11, Caminho: Lugoj -> Mehadja, Custo: 70
+
+Destino encontrado! Custo total: 450
+Caminho encontrado: [Arad -> Sibiu -> Fagaras -> Bucharest]
+Tamanho do caminho encontrado: 4
+Número de nós percorridos: 12

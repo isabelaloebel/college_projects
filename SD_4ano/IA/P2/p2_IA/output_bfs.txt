@@ -1,0 +1,917 @@
+
+Iteração #1
+Nó atual: 129
+Custo acumulado: 0
+Número de nós explorados: 1
+Caminhos possíveis:
+- Id: 133, Caminho: 129 -> 60, Custo: 166
+
+Iteração #2
+Nó atual: 60
+Custo acumulado: 166
+Número de nós explorados: 2
+Caminhos possíveis:
+- Id: 20, Caminho: 60 -> 62, Custo: 139
+- Id: 135, Caminho: 60 -> 58, Custo: 61
+
+Iteração #3
+Nó atual: 62
+Custo acumulado: 305
+Número de nós explorados: 3
+Caminhos possíveis:
+- Id: 22, Caminho: 62 -> 61, Custo: 58
+- Id: 25, Caminho: 62 -> 118, Custo: 75
+
+Iteração #4
+Nó atual: 58
+Custo acumulado: 227
+Número de nós explorados: 4
+Caminhos possíveis:
+- Id: 18, Caminho: 58 -> 59, Custo: 192
+- Id: 137, Caminho: 58 -> 54, Custo: 60
+
+Iteração #5
+Nó atual: 61
+Custo acumulado: 363
+Número de nós explorados: 5
+Caminhos possíveis:
+- Id: 42, Caminho: 61 -> 56, Custo: 57
+
+Iteração #6
+Nó atual: 118
+Custo acumulado: 380
+Número de nós explorados: 6
+Caminhos possíveis:
+
+Iteração #7
+Nó atual: 59
+Custo acumulado: 419
+Número de nós explorados: 7
+Caminhos possíveis:
+- Id: 47, Caminho: 59 -> 55, Custo: 60
+
+Iteração #8
+Nó atual: 54
+Custo acumulado: 287
+Número de nós explorados: 8
+Caminhos possíveis:
+- Id: 141, Caminho: 54 -> 22, Custo: 46
+
+Iteração #9
+Nó atual: 56
+Custo acumulado: 420
+Número de nós explorados: 9
+Caminhos possíveis:
+- Id: 40, Caminho: 56 -> 119, Custo: 18
+- Id: 381, Caminho: 56 -> 35, Custo: 127
+
+Iteração #10
+Nó atual: 55
+Custo acumulado: 479
+Número de nós explorados: 10
+Caminhos possíveis:
+- Id: 39, Caminho: 55 -> 37, Custo: 60
+
+Iteração #11
+Nó atual: 22
+Custo acumulado: 333
+Número de nós explorados: 11
+Caminhos possíveis:
+- Id: 139, Caminho: 22 -> 40, Custo: 16
+- Id: 359, Caminho: 22 -> 57, Custo: 74
+
+Iteração #12
+Nó atual: 119
+Custo acumulado: 438
+Número de nós explorados: 12
+Caminhos possíveis:
+
+Iteração #13
+Nó atual: 35
+Custo acumulado: 547
+Número de nós explorados: 13
+Caminhos possíveis:
+- Id: 50, Caminho: 35 -> 120, Custo: 22
+- Id: 53, Caminho: 35 -> 39, Custo: 238
+
+Iteração #14
+Nó atual: 37
+Custo acumulado: 539
+Número de nós explorados: 14
+Caminhos possíveis:
+- Id: 30, Caminho: 37 -> 36, Custo: 59
+- Id: 33, Caminho: 37 -> 38, Custo: 62
+- Id: 299, Caminho: 37 -> 46, Custo: 230
+
+Iteração #15
+Nó atual: 40
+Custo acumulado: 349
+Número de nós explorados: 15
+Caminhos possíveis:
+- Id: 35, Caminho: 40 -> 41, Custo: 62
+- Id: 143, Caminho: 40 -> 23, Custo: 57
+
+Iteração #16
+Nó atual: 57
+Custo acumulado: 407
+Número de nós explorados: 16
+Caminhos possíveis:
+- Id: 14, Caminho: 57 -> 67, Custo: 83
+- Id: 357, Caminho: 57 -> 63, Custo: 113
+
+Iteração #17
+Nó atual: 120
+Custo acumulado: 569
+Número de nós explorados: 17
+Caminhos possíveis:
+
+Iteração #18
+Nó atual: 39
+Custo acumulado: 785
+Número de nós explorados: 18
+Caminhos possíveis:
+- Id: 55, Caminho: 39 -> 34, Custo: 242
+
+Iteração #19
+Nó atual: 36
+Custo acumulado: 598
+Número de nós explorados: 19
+Caminhos possíveis:
+- Id: 291, Caminho: 36 -> 45, Custo: 222
+
+Iteração #20
+Nó atual: 38
+Custo acumulado: 601
+Número de nós explorados: 20
+Caminhos possíveis:
+- Id: 307, Caminho: 38 -> 47, Custo: 236
+
+Iteração #21
+Nó atual: 46
+Custo acumulado: 769
+Número de nós explorados: 21
+Caminhos possíveis:
+- Id: 301, Caminho: 46 -> 8, Custo: 214
+
+Iteração #22
+Nó atual: 41
+Custo acumulado: 411
+Número de nós explorados: 22
+Caminhos possíveis:
+- Id: 253, Caminho: 41 -> 44, Custo: 216
+
+Iteração #23
+Nó atual: 23
+Custo acumulado: 406
+Número de nós explorados: 23
+Caminhos possíveis:
+- Id: 145, Caminho: 23 -> 19, Custo: 76
+- Id: 367, Caminho: 23 -> 100, Custo: 247
+
+Iteração #24
+Nó atual: 67
+Custo acumulado: 490
+Número de nós explorados: 24
+Caminhos possíveis:
+- Id: 7, Caminho: 67 -> 64, Custo: 115
+- Id: 16, Caminho: 67 -> 68, Custo: 84
+
+Iteração #25
+Nó atual: 63
+Custo acumulado: 520
+Número de nós explorados: 25
+Caminhos possíveis:
+- Id: 5, Caminho: 63 -> 66, Custo: 41
+
+Iteração #26
+Nó atual: 34
+Custo acumulado: 1027
+Número de nós explorados: 26
+Caminhos possíveis:
+- Id: 57, Caminho: 34 -> 31, Custo: 215
+- Id: 124, Caminho: 34 -> 10, Custo: 23
+
+Iteração #27
+Nó atual: 45
+Custo acumulado: 820
+Número de nós explorados: 27
+Caminhos possíveis:
+- Id: 293, Caminho: 45 -> 7, Custo: 215
+
+Iteração #28
+Nó atual: 47
+Custo acumulado: 837
+Número de nós explorados: 28
+Caminhos possíveis:
+- Id: 309, Caminho: 47 -> 9, Custo: 215
+
+Iteração #29
+Nó atual: 8
+Custo acumulado: 983
+Número de nós explorados: 29
+Caminhos possíveis:
+- Id: 303, Caminho: 8 -> 1, Custo: 193
+
+Iteração #30
+Nó atual: 44
+Custo acumulado: 627
+Número de nós explorados: 30
+Caminhos possíveis:
+- Id: 115, Caminho: 44 -> 43, Custo: 66
+- Id: 255, Caminho: 44 -> 30, Custo: 214
+
+Iteração #31
+Nó atual: 19
+Custo acumulado: 482
+Número de nós explorados: 31
+Caminhos possíveis:
+- Id: 183, Caminho: 19 -> 99, Custo: 242
+
+Iteração #32
+Nó atual: 100
+Custo acumulado: 653
+Número de nós explorados: 32
+Caminhos possíveis:
+- Id: 64, Caminho: 100 -> 98, Custo: 113
+- Id: 365, Caminho: 100 -> 53, Custo: 76
+
+Iteração #33
+Nó atual: 64
+Custo acumulado: 605
+Número de nós explorados: 33
+Caminhos possíveis:
+- Id: 1, Caminho: 64 -> 65, Custo: 84
+
+Iteração #34
+Nó atual: 68
+Custo acumulado: 574
+Número de nós explorados: 34
+Caminhos possíveis:
+- Id: 11, Caminho: 68 -> 69, Custo: 59
+
+Iteração #35
+Nó atual: 66
+Custo acumulado: 561
+Número de nós explorados: 35
+Caminhos possíveis:
+
+Iteração #36
+Nó atual: 31
+Custo acumulado: 1242
+Número de nós explorados: 36
+Caminhos possíveis:
+- Id: 59, Caminho: 31 -> 33, Custo: 192
+- Id: 282, Caminho: 31 -> 5, Custo: 25
+
+Iteração #37
+Nó atual: 10
+Custo acumulado: 1050
+Número de nós explorados: 37
+Caminhos possíveis:
+- Id: 126, Caminho: 10 -> 42, Custo: 65
+- Id: 382, Caminho: 10 -> 149, Custo: 120
+
+Iteração #38
+Nó atual: 7
+Custo acumulado: 1035
+Número de nós explorados: 38
+Caminhos possíveis:
+- Id: 295, Caminho: 7 -> 0, Custo: 193
+
+Iteração #39
+Nó atual: 9
+Custo acumulado: 1052
+Número de nós explorados: 39
+Caminhos possíveis:
+- Id: 311, Caminho: 9 -> 2, Custo: 193
+
+Iteração #40
+Nó atual: 1
+Custo acumulado: 1176
+Número de nós explorados: 40
+Caminhos possíveis:
+- Id: 297, Caminho: 1 -> 142, Custo: 212
+
+Iteração #41
+Nó atual: 43
+Custo acumulado: 693
+Número de nós explorados: 41
+Caminhos possíveis:
+- Id: 113, Caminho: 43 -> 97, Custo: 234
+- Id: 149, Caminho: 43 -> 18, Custo: 70
+
+Iteração #42
+Nó atual: 30
+Custo acumulado: 841
+Número de nós explorados: 42
+Caminhos possíveis:
+- Id: 97, Caminho: 30 -> 84, Custo: 72
+- Id: 257, Caminho: 30 -> 29, Custo: 193
+
+Iteração #43
+Nó atual: 99
+Custo acumulado: 724
+Número de nós explorados: 43
+Caminhos possíveis:
+- Id: 181, Caminho: 99 -> 103, Custo: 130
+
+Iteração #44
+Nó atual: 98
+Custo acumulado: 766
+Número de nós explorados: 44
+Caminhos possíveis:
+- Id: 62, Caminho: 98 -> 102, Custo: 131
+
+Iteração #45
+Nó atual: 53
+Custo acumulado: 729
+Número de nós explorados: 45
+Caminhos possíveis:
+- Id: 324, Caminho: 53 -> 51, Custo: 236
+- Id: 363, Caminho: 53 -> 104, Custo: 47
+
+Iteração #46
+Nó atual: 65
+Custo acumulado: 689
+Número de nós explorados: 46
+Caminhos possíveis:
+
+Iteração #47
+Nó atual: 69
+Custo acumulado: 633
+Número de nós explorados: 47
+Caminhos possíveis:
+- Id: 12, Caminho: 69 -> 117, Custo: 64
+
+Iteração #48
+Nó atual: 33
+Custo acumulado: 1434
+Número de nós explorados: 48
+Caminhos possíveis:
+- Id: 49, Caminho: 33 -> 32, Custo: 465
+- Id: 268, Caminho: 33 -> 4, Custo: 23
+
+Iteração #49
+Nó atual: 5
+Custo acumulado: 1267
+Número de nós explorados: 49
+Caminhos possíveis:
+- Id: 284, Caminho: 5 -> 6, Custo: 65
+
+Iteração #50
+Nó atual: 42
+Custo acumulado: 1115
+Número de nós explorados: 50
+Caminhos possíveis:
+- Id: 128, Caminho: 42 -> 127, Custo: 415
+- Id: 314, Caminho: 42 -> 145, Custo: 175
+
+Iteração #51
+Nó atual: 149
+Custo acumulado: 1170
+Número de nós explorados: 51
+Caminhos possíveis:
+
+Iteração #52
+Nó atual: 0
+Custo acumulado: 1228
+Número de nós explorados: 52
+Caminhos possíveis:
+- Id: 289, Caminho: 0 -> 141, Custo: 212
+
+Iteração #53
+Nó atual: 2
+Custo acumulado: 1245
+Número de nós explorados: 53
+Caminhos possíveis:
+- Id: 305, Caminho: 2 -> 143, Custo: 393
+
+Iteração #54
+Nó atual: 142
+Custo acumulado: 1388
+Número de nós explorados: 54
+Caminhos possíveis:
+
+Iteração #55
+Nó atual: 97
+Custo acumulado: 927
+Número de nós explorados: 55
+Caminhos possíveis:
+- Id: 71, Caminho: 97 -> 96, Custo: 74
+- Id: 111, Caminho: 97 -> 48, Custo: 73
+
+Iteração #56
+Nó atual: 18
+Custo acumulado: 763
+Número de nós explorados: 56
+Caminhos possíveis:
+- Id: 175, Caminho: 18 -> 27, Custo: 54
+
+Iteração #57
+Nó atual: 84
+Custo acumulado: 913
+Número de nós explorados: 57
+Caminhos possíveis:
+- Id: 95, Caminho: 84 -> 93, Custo: 60
+- Id: 153, Caminho: 84 -> 21, Custo: 84
+
+Iteração #58
+Nó atual: 29
+Custo acumulado: 1034
+Número de nós explorados: 58
+Caminhos possíveis:
+- Id: 203, Caminho: 29 -> 20, Custo: 77
+- Id: 259, Caminho: 29 -> 28, Custo: 109
+
+Iteração #59
+Nó atual: 103
+Custo acumulado: 854
+Número de nós explorados: 59
+Caminhos possíveis:
+- Id: 165, Caminho: 103 -> 49, Custo: 70
+- Id: 179, Caminho: 103 -> 109, Custo: 156
+
+Iteração #60
+Nó atual: 102
+Custo acumulado: 897
+Número de nós explorados: 60
+Caminhos possíveis:
+- Id: 323, Caminho: 102 -> 52, Custo: 36
+
+Iteração #61
+Nó atual: 51
+Custo acumulado: 965
+Número de nós explorados: 61
+Caminhos possíveis:
+
+Iteração #62
+Nó atual: 104
+Custo acumulado: 776
+Número de nós explorados: 62
+Caminhos possíveis:
+- Id: 361, Caminho: 104 -> 110, Custo: 157
+
+Iteração #63
+Nó atual: 117
+Custo acumulado: 697
+Número de nós explorados: 63
+Caminhos possíveis:
+
+Iteração #64
+Nó atual: 32
+Custo acumulado: 1899
+Número de nós explorados: 64
+Caminhos possíveis:
+
+Iteração #65
+Nó atual: 4
+Custo acumulado: 1457
+Número de nós explorados: 65
+Caminhos possíveis:
+- Id: 270, Caminho: 4 -> 3, Custo: 65
+
+Iteração #66
+Nó atual: 6
+Custo acumulado: 1332
+Número de nós explorados: 66
+Caminhos possíveis:
+- Id: 286, Caminho: 6 -> 140, Custo: 386
+
+Iteração #67
+Nó atual: 127
+Custo acumulado: 1530
+Número de nós explorados: 67
+Caminhos possíveis:
+
+Iteração #68
+Nó atual: 145
+Custo acumulado: 1290
+Número de nós explorados: 68
+Caminhos possíveis:
+
+Iteração #69
+Nó atual: 141
+Custo acumulado: 1440
+Número de nós explorados: 69
+Caminhos possíveis:
+
+Iteração #70
+Nó atual: 143
+Custo acumulado: 1638
+Número de nós explorados: 70
+Caminhos possíveis:
+
+Iteração #71
+Nó atual: 96
+Custo acumulado: 1001
+Número de nós explorados: 71
+Caminhos possíveis:
+- Id: 61, Caminho: 96 -> 101, Custo: 66
+- Id: 170, Caminho: 96 -> 26, Custo: 91
+
+Iteração #72
+Nó atual: 48
+Custo acumulado: 1000
+Número de nós explorados: 72
+Caminhos possíveis:
+- Id: 159, Caminho: 48 -> 85, Custo: 141
+
+Iteração #73
+Nó atual: 27
+Custo acumulado: 817
+Número de nós explorados: 73
+Caminhos possíveis:
+
+Iteração #74
+Nó atual: 93
+Custo acumulado: 973
+Número de nós explorados: 74
+Caminhos possíveis:
+- Id: 93, Caminho: 93 -> 83, Custo: 43
+
+Iteração #75
+Nó atual: 21
+Custo acumulado: 997
+Número de nós explorados: 75
+Caminhos possíveis:
+- Id: 205, Caminho: 21 -> 24, Custo: 126
+
+Iteração #76
+Nó atual: 20
+Custo acumulado: 1111
+Número de nós explorados: 76
+Caminhos possíveis:
+- Id: 157, Caminho: 20 -> 17, Custo: 141
+- Id: 201, Caminho: 20 -> 76, Custo: 64
+
+Iteração #77
+Nó atual: 28
+Custo acumulado: 1143
+Número de nós explorados: 77
+Caminhos possíveis:
+- Id: 251, Caminho: 28 -> 138, Custo: 102
+
+Iteração #78
+Nó atual: 49
+Custo acumulado: 924
+Número de nós explorados: 78
+Caminhos possíveis:
+- Id: 107, Caminho: 49 -> 50, Custo: 65
+- Id: 161, Caminho: 49 -> 91, Custo: 122
+
+Iteração #79
+Nó atual: 109
+Custo acumulado: 1010
+Número de nós explorados: 79
+Caminhos possíveis:
+- Id: 103, Caminho: 109 -> 108, Custo: 71
+- Id: 177, Caminho: 109 -> 130, Custo: 176
+
+Iteração #80
+Nó atual: 52
+Custo acumulado: 933
+Número de nós explorados: 80
+Caminhos possíveis:
+- Id: 326, Caminho: 52 -> 146, Custo: 45
+
+Iteração #81
+Nó atual: 110
+Custo acumulado: 933
+Número de nós explorados: 81
+Caminhos possíveis:
+
+Iteração #82
+Nó atual: 3
+Custo acumulado: 1522
+Número de nós explorados: 82
+Caminhos possíveis:
+- Id: 272, Caminho: 3 -> 139, Custo: 358
+- Id: 313, Caminho: 3 -> 144, Custo: 405
+
+Iteração #83
+Nó atual: 140
+Custo acumulado: 1718
+Número de nós explorados: 83
+Caminhos possíveis:
+
+Iteração #84
+Nó atual: 101
+Custo acumulado: 1067
+Número de nós explorados: 84
+Caminhos possíveis:
+- Id: 85, Caminho: 101 -> 86, Custo: 30
+- Id: 86, Caminho: 101 -> 87, Custo: 53
+
+Iteração #85
+Nó atual: 26
+Custo acumulado: 1092
+Número de nós explorados: 85
+Caminhos possíveis:
+- Id: 167, Caminho: 26 -> 92, Custo: 69
+
+Iteração #86
+Nó atual: 85
+Custo acumulado: 1141
+Número de nós explorados: 86
+Caminhos possíveis:
+- Id: 81, Caminho: 85 -> 90, Custo: 48
+
+Iteração #87
+Nó atual: 83
+Custo acumulado: 1016
+Número de nós explorados: 87
+Caminhos possíveis:
+
+Iteração #88
+Nó atual: 24
+Custo acumulado: 1123
+Número de nós explorados: 88
+Caminhos possíveis:
+- Id: 226, Caminho: 24 -> 70, Custo: 85
+
+Iteração #89
+Nó atual: 17
+Custo acumulado: 1252
+Número de nós explorados: 89
+Caminhos possíveis:
+- Id: 131, Caminho: 17 -> 128, Custo: 535
+- Id: 351, Caminho: 17 -> 25, Custo: 110
+
+Iteração #90
+Nó atual: 76
+Custo acumulado: 1175
+Número de nós explorados: 90
+Caminhos possíveis:
+
+Iteração #91
+Nó atual: 138
+Custo acumulado: 1245
+Número de nós explorados: 91
+Caminhos possíveis:
+
+Iteração #92
+Nó atual: 50
+Custo acumulado: 989
+Número de nós explorados: 92
+Caminhos possíveis:
+- Id: 209, Caminho: 50 -> 89, Custo: 101
+
+Iteração #93
+Nó atual: 91
+Custo acumulado: 1046
+Número de nós explorados: 93
+Caminhos possíveis:
+
+Iteração #94
+Nó atual: 108
+Custo acumulado: 1081
+Número de nós explorados: 94
+Caminhos possíveis:
+- Id: 99, Caminho: 108 -> 88, Custo: 72
+
+Iteração #95
+Nó atual: 130
+Custo acumulado: 1186
+Número de nós explorados: 95
+Caminhos possíveis:
+
+Iteração #96
+Nó atual: 146
+Custo acumulado: 978
+Número de nós explorados: 96
+Caminhos possíveis:
+
+Iteração #97
+Nó atual: 139
+Custo acumulado: 1880
+Número de nós explorados: 97
+Caminhos possíveis:
+
+Iteração #98
+Nó atual: 144
+Custo acumulado: 1927
+Número de nós explorados: 98
+Caminhos possíveis:
+
+Iteração #99
+Nó atual: 86
+Custo acumulado: 1097
+Número de nós explorados: 99
+Caminhos possíveis:
+- Id: 217, Caminho: 86 -> 73, Custo: 134
+
+Iteração #100
+Nó atual: 87
+Custo acumulado: 1120
+Número de nós explorados: 100
+Caminhos possíveis:
+- Id: 220, Caminho: 87 -> 75, Custo: 155
+
+Iteração #101
+Nó atual: 92
+Custo acumulado: 1161
+Número de nós explorados: 101
+Caminhos possíveis:
+
+Iteração #102
+Nó atual: 90
+Custo acumulado: 1189
+Número de nós explorados: 102
+Caminhos possíveis:
+- Id: 213, Caminho: 90 -> 72, Custo: 122
+
+Iteração #103
+Nó atual: 70
+Custo acumulado: 1208
+Número de nós explorados: 103
+Caminhos possíveis:
+- Id: 228, Caminho: 70 -> 16, Custo: 195
+
+Iteração #104
+Nó atual: 128
+Custo acumulado: 1787
+Número de nós explorados: 104
+Caminhos possíveis:
+
+Iteração #105
+Nó atual: 25
+Custo acumulado: 1362
+Número de nós explorados: 105
+Caminhos possíveis:
+
+Iteração #106
+Nó atual: 89
+Custo acumulado: 1090
+Número de nós explorados: 106
+Caminhos possíveis:
+- Id: 207, Caminho: 89 -> 71, Custo: 130
+
+Iteração #107
+Nó atual: 88
+Custo acumulado: 1153
+Número de nós explorados: 107
+Caminhos possíveis:
+- Id: 73, Caminho: 88 -> 126, Custo: 511
+- Id: 377, Caminho: 88 -> 77, Custo: 137
+
+Iteração #108
+Nó atual: 73
+Custo acumulado: 1231
+Número de nós explorados: 108
+Caminhos possíveis:
+- Id: 215, Caminho: 73 -> 78, Custo: 142
+
+Iteração #109
+Nó atual: 75
+Custo acumulado: 1275
+Número de nós explorados: 109
+Caminhos possíveis:
+- Id: 222, Caminho: 75 -> 79, Custo: 163
+
+Iteração #110
+Nó atual: 72
+Custo acumulado: 1311
+Número de nós explorados: 110
+Caminhos possíveis:
+- Id: 211, Caminho: 72 -> 94, Custo: 137
+
+Iteração #111
+Nó atual: 16
+Custo acumulado: 1403
+Número de nós explorados: 111
+Caminhos possíveis:
+- Id: 249, Caminho: 16 -> 137, Custo: 145
+- Id: 347, Caminho: 16 -> 15, Custo: 53
+
+Iteração #112
+Nó atual: 71
+Custo acumulado: 1220
+Número de nós explorados: 112
+Caminhos possíveis:
+- Id: 189, Caminho: 71 -> 74, Custo: 44
+
+Iteração #113
+Nó atual: 126
+Custo acumulado: 1664
+Número de nós explorados: 113
+Caminhos possíveis:
+
+Iteração #114
+Nó atual: 77
+Custo acumulado: 1290
+Número de nós explorados: 114
+Caminhos possíveis:
+- Id: 185, Caminho: 77 -> 133, Custo: 243
+- Id: 379, Caminho: 77 -> 82, Custo: 161
+
+Iteração #115
+Nó atual: 78
+Custo acumulado: 1373
+Número de nós explorados: 115
+Caminhos possíveis:
+- Id: 338, Caminho: 78 -> 13, Custo: 35
+- Id: 341, Caminho: 78 -> 12, Custo: 44
+
+Iteração #116
+Nó atual: 79
+Custo acumulado: 1438
+Número de nós explorados: 116
+Caminhos possíveis:
+
+Iteração #117
+Nó atual: 94
+Custo acumulado: 1448
+Número de nós explorados: 117
+Caminhos possíveis:
+- Id: 335, Caminho: 94 -> 80, Custo: 37
+
+Iteração #118
+Nó atual: 137
+Custo acumulado: 1548
+Número de nós explorados: 118
+Caminhos possíveis:
+
+Iteração #119
+Nó atual: 15
+Custo acumulado: 1456
+Número de nós explorados: 119
+Caminhos possíveis:
+- Id: 247, Caminho: 15 -> 136, Custo: 163
+
+Iteração #120
+Nó atual: 74
+Custo acumulado: 1264
+Número de nós explorados: 120
+Caminhos possíveis:
+- Id: 219, Caminho: 74 -> 95, Custo: 148
+
+Iteração #121
+Nó atual: 133
+Custo acumulado: 1533
+Número de nós explorados: 121
+Caminhos possíveis:
+
+Iteração #122
+Nó atual: 82
+Custo acumulado: 1451
+Número de nós explorados: 122
+Caminhos possíveis:
+- Id: 329, Caminho: 82 -> 147, Custo: 605
+- Id: 375, Caminho: 82 -> 148, Custo: 190
+
+Iteração #123
+Nó atual: 13
+Custo acumulado: 1408
+Número de nós explorados: 123
+Caminhos possíveis:
+- Id: 241, Caminho: 13 -> 14, Custo: 88
+
+Iteração #124
+Nó atual: 12
+Custo acumulado: 1417
+Número de nós explorados: 124
+Caminhos possíveis:
+- Id: 237, Caminho: 12 -> 11, Custo: 89
+
+Iteração #125
+Nó atual: 80
+Custo acumulado: 1485
+Número de nós explorados: 125
+Caminhos possíveis:
+- Id: 235, Caminho: 80 -> 81, Custo: 93
+
+Iteração #126
+Nó atual: 136
+Custo acumulado: 1619
+Número de nós explorados: 126
+Caminhos possíveis:
+
+Iteração #127
+Nó atual: 95
+Custo acumulado: 1412
+Número de nós explorados: 127
+Caminhos possíveis:
+
+Iteração #128
+Nó atual: 147
+Custo acumulado: 2056
+Número de nós explorados: 128
+Caminhos possíveis:
+
+Iteração #129
+Nó atual: 148
+Custo acumulado: 1641
+Número de nós explorados: 129
+Caminhos possíveis:
+
+Iteração #130
+Nó atual: 14
+Custo acumulado: 1496
+Número de nós explorados: 130
+Caminhos possíveis:
+- Id: 239, Caminho: 14 -> 135, Custo: 87
+
+Destino encontrado! Custo total: 1506
+Caminho encontrado: [129 -> 60 -> 58 -> 54 -> 22 -> 40 -> 41 -> 44 -> 43 -> 97 -> 96 -> 101 -> 86 -> 73 -> 78 -> 12 -> 11]
+Tamanho do caminho encontrado: 17
+Número de nós percorridos: 133
