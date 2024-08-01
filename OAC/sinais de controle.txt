@@ -1,0 +1,55 @@
+ #sinais de controle
+    # addi 
+        # ALUOp: '00',
+        # Branch: 0,
+        # ALUSrc: 1,
+        # MemToReg: 0,
+        # RegWrite: 1,
+        # MemRead: 0,
+        # MemWrite: 0,
+
+    # add, sub, and, or
+        # ALUOp: '10',
+        # Branch: 0,
+        # ALUSrc: 0,
+        # MemToReg: 0,
+        # RegWrite: 1,
+        # MemRead: 0,
+        # MemWrite: 0,
+    
+    # sw
+        # ALUOp: '00',
+        # Branch: 0,
+        # ALUSrc: 1,
+        # MemToReg: '-',
+        # RegWrite: 0,
+        # MemRead: 0,
+        # MemWrite: 1,
+
+    # lw
+        # ALUOp: '00',
+        # Branch: 0,
+        # ALUSrc: 1,
+        # MemToReg: 1,
+        # RegWrite: 1,
+        # MemRead: 1,
+        # MemWrite: 0,
+
+    # opcode
+        # 0110011 → tipo r
+        # 0100011 → tipo s
+        # 0010011 ou 0000011 → tipo i
+
+    # functs
+    #tipo r
+        # funct7: 0100000 → sub //nao usa funct3
+        # funct7: 0000000 → funct3: 000 → add
+        # funct7: 0000000 → funct3: 110 → or
+        # funct7: 0000000 → funct3: 111 → and
+
+    #tipo i
+        # funct3: 000 → addi 
+        # funct3: 010 → lw
+
+    #tipo s
+        # funct3: 010 → sw

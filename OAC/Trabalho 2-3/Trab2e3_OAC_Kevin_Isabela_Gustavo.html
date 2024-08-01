@@ -1,636 +1,1025 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<title>Trabalho OAC</title>
-		<script type="text/javascript" src="jquery.min.js"></script>
-		<script>
-var registers = {};
+    <head>
+        <meta charset="UTF-8" />
+        <title>Trabalho OAC</title>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script>
+            var registers = {};
 
-/**
- * Classe para emular a maquina
- * */
-class Operations 
-{
-    // Constructor
-	constructor() 
-	{  
-        // Inicializa os registradores
-		this.registers = [];
-		for (let i = 0; i < 32; i++)
-			this.registers[i] = 0;
+            /**
+             * Classe para emular a maquina
+             * */
+            class Operations {
+                // Constructor
+                constructor() {
+                    // Inicializa os registradores
+                    this.registers = [];
+                    for (let i = 0; i < 32; i++) this.registers[i] = 0;
 
-		this.controlsignals = []
-		//this.runTimeRegisters = [];
-		this.runTimeMemory = [];
-		this.memory = [];
-	}
-	updateRunTimeMemory()
-	{
-		var tmpMemory = [];
-		$.each(this.memory, function(key, value)
-		{
-			tmpMemory.push({"mem_offset": value.mem_offset, "mem_value": parseInt(value.mem_value, 2)});			
-		});
-		this.runTimeMemory.push(tmpMemory);
-	};
-	Addi(rd, rs1, imm, registers)
-	{
-        registers[rd] = registers[rs1] + imm;
-		return registers;
-	}
-	Add(rd, rs1, rs2, registers)
-	{
-		registers[rd] = registers[rs1] + registers[rs2];
-		return registers;
-	}
-	Sub(rd, rs1, rs2, registers)
-	{
-		registers[rd] = registers[rs1] - registers[rs2];
-		return registers;
-	}
-	And(rd, rs1, rs2, registers)
-	{
-		registers[rd] = registers[rs1] & registers[rs2];
-		return registers;
-	}
-	Or(rd, rs1, rs2, registers)
-	{	
-		registers[rd] = registers[rs1] | registers[rs2];
-		return registers;	
-	}
-	Sw(rs2, offset, rs1, registers, memory)
-	{
-		offset += registers[rs1];
-		memory.push({"mem_offset": offset, "mem_value": registers[rs2]});
-		return registers;
-	}
-	Lw(rd, offset, rs1, registers, memory)
-	{
-		offset += registers[rs1];
-		var memval = 0;
-		$.each(memory, function(key, value)
-		{
-            // Procura pelo offset de memória
-			if (value.mem_offset == offset)
-			{
-				memval = value.mem_value;
-				return false;
-			}
-		});
+                    this.controlsignals = [];
+                    //this.runTimeRegisters = [];
+                    this.runTimeMemory = [];
+                    this.memory = [];
+                }
+                updateRunTimeMemory() {
+                    var tmpMemory = [];
+                    $.each(this.memory, function (key, value) {
+                        tmpMemory.push({
+                            mem_offset: value.mem_offset,
+                            mem_value: parseInt(value.mem_value, 2),
+                        });
+                    });
+                    this.runTimeMemory.push(tmpMemory);
+                }
+                Addi(rd, rs1, imm, registers) {
+                    registers[rd] = registers[rs1] + imm;
+                    return registers;
+                }
+                Add(rd, rs1, rs2, registers) {
+                    registers[rd] = registers[rs1] + registers[rs2];
+                    return registers;
+                }
+                Sub(rd, rs1, rs2, registers) {
+                    registers[rd] = registers[rs1] - registers[rs2];
+                    return registers;
+                }
+                And(rd, rs1, rs2, registers) {
+                    registers[rd] = registers[rs1] & registers[rs2];
+                    return registers;
+                }
+                Or(rd, rs1, rs2, registers) {
+                    registers[rd] = registers[rs1] | registers[rs2];
+                    return registers;
+                }
+                Sw(rs2, offset, rs1, registers, memory) {
+                    offset += registers[rs1];
+                    memory.push({
+                        mem_offset: offset,
+                        mem_value: registers[rs2],
+                    });
+                    return registers;
+                }
+                Lw(rd, offset, rs1, registers, memory) {
+                    offset += registers[rs1];
+                    var memval = 0;
+                    $.each(memory, function (key, value) {
+                        // Procura pelo offset de memória
+                        if (value.mem_offset == offset) {
+                            memval = value.mem_value;
+                            return false;
+                        }
+                    });
 
-        // Carrega o dado da memória para o registrador
-		registers[rd] = memval;	
-		return registers;
-	}
-	Beq(rs1, rs2, registers)
-	{	
-		if (registers[rs1] == registers[rs2])
-			return 1;
-		else return -1;
-	}
-	Bne(rs1, rs2, registers)
-	{		
-		if (registers[rs1] != registers[rs2])
-			return 1;
-		else return -1;
-	}
-}
+                    // Carrega o dado da memória para o registrador
+                    registers[rd] = memval;
+                    return registers;
+                }
+                Beq(rs1, rs2, registers) {
+                    if (registers[rs1] == registers[rs2]) return 1;
+                    else return -1;
+                }
+                Bne(rs1, rs2, registers) {
+                    if (registers[rs1] != registers[rs2]) return 1;
+                    else return -1;
+                }
+            }
 
-/*
+            /*
     Obtém número correspondente ao registrador
     @param binary: código binário do registrador
 */
-function getRegister(binary)
-{
-	binary = parseInt(binary, 2);
-	if (binary < 0 || binary > 31)
-		return "xUnknownReg";
-	else return binary;
-}
+            function getRegister(binary) {
+                binary = parseInt(binary, 2);
+                if (binary < 0 || binary > 31) return 'xUnknownReg';
+                else return binary;
+            }
 
-function R_Type(instruction, line, Op, PC)
-{
-	var rs2 = getRegister(instruction.slice(7, 12));
-	var rs1 = getRegister(instruction.slice(12, 17));
-	var rd = getRegister(instruction.slice(20, 25));
-	var funct3 = instruction.slice(17, 20);
-	var funct7 = instruction.slice(0, 7);
-	
-	if (funct7 == "0100000")
-	{
-		$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="sub" data-rs1="' + rs1 + '" data-rs2="' + rs2 + '" data-rd="' + rd + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> sub x' + rd + ', x' + rs1 + ', x' + rs2 + '</li>');
-	}
-	else if (funct7 == "0000000")
-	{
-		if (funct3 == "000")
-		{
-			$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="add" data-rs1="' + rs1 + '" data-rs2="' + rs2 + '" data-rd="' + rd + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> add x' + rd + ', x' + rs1 + ', x' + rs2 + '</li>');
-		}
-		else if (funct3 == "110")
-		{
-			$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="or" data-rs1="' + rs1 + '" data-rs2="' + rs2 + '" data-rd="' + rd + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> or x' + rd + ', x' + rs1 + ', x' + rs2 + '</li>');
-		}
-		else if (funct3 == "111")
-		{
-			$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="and" data-rs1="' + rs1 + '" data-rs2="' + rs2 + '" data-rd="' + rd + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> and x' + rd + ', x' + rs1 + ', x' + rs2 + '</li>');
-		}
-	}
-}
+            function R_Type(instruction, line, Op, PC) {
+                var rs2 = getRegister(instruction.slice(7, 12));
+                var rs1 = getRegister(instruction.slice(12, 17));
+                var rd = getRegister(instruction.slice(20, 25));
+                var funct3 = instruction.slice(17, 20);
+                var funct7 = instruction.slice(0, 7);
 
-function I_Type(instruction, line, Op, PC)
-{
-	var imm_11_0 = instruction.slice(0, 12);
-	var rs1 = getRegister(instruction.slice(12, 17));
-	var rd = getRegister(instruction.slice(20, 25));
-	var funct3 = instruction.slice(17, 20);
-	if (funct3 == "000")
-	{
-		$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="addi" data-rs1="' + rs1 + '" data-rd="' + rd + '" data-constant="' + parseInt(imm_11_0, 2) + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> addi x' + rd + ', x' + rs1 + ', ' + parseInt(imm_11_0, 2) + '</li>');
-	}
-	else if (funct3 == "010")
-	{
-		$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="lw" data-rs1="' + rs1 + '" data-rd="' + rd + '" data-constant="' + parseInt(imm_11_0, 2) + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> lw x' + rd + ', ' + parseInt(imm_11_0, 2) + '(x' + rs1 + ')</li>');
-	}
-}
+                if (funct7 == '0100000') {
+                    $("ul[class='assembly-result']").append(
+                        '<li class="assembly-result-line" data-PC="' +
+                            PC +
+                            '" data-instruction="sub" data-rs1="' +
+                            rs1 +
+                            '" data-rs2="' +
+                            rs2 +
+                            '" data-rd="' +
+                            rd +
+                            '"><span style="color: red;">[ PC - ' +
+                            PC +
+                            ' ]</span> sub x' +
+                            rd +
+                            ', x' +
+                            rs1 +
+                            ', x' +
+                            rs2 +
+                            '</li>'
+                    );
+                } else if (funct7 == '0000000') {
+                    if (funct3 == '000') {
+                        $("ul[class='assembly-result']").append(
+                            '<li class="assembly-result-line" data-PC="' +
+                                PC +
+                                '" data-instruction="add" data-rs1="' +
+                                rs1 +
+                                '" data-rs2="' +
+                                rs2 +
+                                '" data-rd="' +
+                                rd +
+                                '"><span style="color: red;">[ PC - ' +
+                                PC +
+                                ' ]</span> add x' +
+                                rd +
+                                ', x' +
+                                rs1 +
+                                ', x' +
+                                rs2 +
+                                '</li>'
+                        );
+                    } else if (funct3 == '110') {
+                        $("ul[class='assembly-result']").append(
+                            '<li class="assembly-result-line" data-PC="' +
+                                PC +
+                                '" data-instruction="or" data-rs1="' +
+                                rs1 +
+                                '" data-rs2="' +
+                                rs2 +
+                                '" data-rd="' +
+                                rd +
+                                '"><span style="color: red;">[ PC - ' +
+                                PC +
+                                ' ]</span> or x' +
+                                rd +
+                                ', x' +
+                                rs1 +
+                                ', x' +
+                                rs2 +
+                                '</li>'
+                        );
+                    } else if (funct3 == '111') {
+                        $("ul[class='assembly-result']").append(
+                            '<li class="assembly-result-line" data-PC="' +
+                                PC +
+                                '" data-instruction="and" data-rs1="' +
+                                rs1 +
+                                '" data-rs2="' +
+                                rs2 +
+                                '" data-rd="' +
+                                rd +
+                                '"><span style="color: red;">[ PC - ' +
+                                PC +
+                                ' ]</span> and x' +
+                                rd +
+                                ', x' +
+                                rs1 +
+                                ', x' +
+                                rs2 +
+                                '</li>'
+                        );
+                    }
+                }
+            }
 
-function S_Type(instruction, line, Op, PC)
-{
-	var rs2 = getRegister(instruction.slice(7, 12));
-	var rs1 = getRegister(instruction.slice(12, 17));
-	var imm_4_0 = instruction.slice(20, 25);
-	var funct3 = instruction.slice(17, 20);
-	var imm_11_5 = instruction.slice(0, 7);
-	if (funct3 == "010")
-	{
-		$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="sw" data-rs1="' + rs1 + '" data-rs2="' + rs2 + '" data-constant="' + parseInt(imm_4_0, 2) + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> sw x' + rs2 + ', ' + parseInt(imm_4_0, 2) + '(x' + rs1 + ')</li>');
-	}
-}
+            function I_Type(instruction, line, Op, PC) {
+                var imm_11_0 = instruction.slice(0, 12);
+                var rs1 = getRegister(instruction.slice(12, 17));
+                var rd = getRegister(instruction.slice(20, 25));
+                var funct3 = instruction.slice(17, 20);
+                if (funct3 == '000') {
+                    $("ul[class='assembly-result']").append(
+                        '<li class="assembly-result-line" data-PC="' +
+                            PC +
+                            '" data-instruction="addi" data-rs1="' +
+                            rs1 +
+                            '" data-rd="' +
+                            rd +
+                            '" data-constant="' +
+                            parseInt(imm_11_0, 2) +
+                            '"><span style="color: red;">[ PC - ' +
+                            PC +
+                            ' ]</span> addi x' +
+                            rd +
+                            ', x' +
+                            rs1 +
+                            ', ' +
+                            parseInt(imm_11_0, 2) +
+                            '</li>'
+                    );
+                } else if (funct3 == '010') {
+                    $("ul[class='assembly-result']").append(
+                        '<li class="assembly-result-line" data-PC="' +
+                            PC +
+                            '" data-instruction="lw" data-rs1="' +
+                            rs1 +
+                            '" data-rd="' +
+                            rd +
+                            '" data-constant="' +
+                            parseInt(imm_11_0, 2) +
+                            '"><span style="color: red;">[ PC - ' +
+                            PC +
+                            ' ]</span> lw x' +
+                            rd +
+                            ', ' +
+                            parseInt(imm_11_0, 2) +
+                            '(x' +
+                            rs1 +
+                            ')</li>'
+                    );
+                }
+            }
 
-/*
+            function S_Type(instruction, line, Op, PC) {
+                var rs2 = getRegister(instruction.slice(7, 12));
+                var rs1 = getRegister(instruction.slice(12, 17));
+                var imm_4_0 = instruction.slice(20, 25);
+                var funct3 = instruction.slice(17, 20);
+                var imm_11_5 = instruction.slice(0, 7);
+                if (funct3 == '010') {
+                    $("ul[class='assembly-result']").append(
+                        '<li class="assembly-result-line" data-PC="' +
+                            PC +
+                            '" data-instruction="sw" data-rs1="' +
+                            rs1 +
+                            '" data-rs2="' +
+                            rs2 +
+                            '" data-constant="' +
+                            parseInt(imm_4_0, 2) +
+                            '"><span style="color: red;">[ PC - ' +
+                            PC +
+                            ' ]</span> sw x' +
+                            rs2 +
+                            ', ' +
+                            parseInt(imm_4_0, 2) +
+                            '(x' +
+                            rs1 +
+                            ')</li>'
+                    );
+                }
+            }
+
+            /*
     Obtém a constante em complemento de 2
     @param constant: binario de 12 bits
 */
-function toC2(constant)
-{
-	var bin = '';
-	for (i = 0; i < 12; i++)
-    {
-        // Inverte os bits
-		bin += (constant[i] == '1') ? '0' : '1';
-    }
+            function toC2(constant) {
+                var bin = '';
+                for (i = 0; i < 12; i++) {
+                    // Inverte os bits
+                    bin += constant[i] == '1' ? '0' : '1';
+                }
 
-    // Converte para inteiro
-	constant = parseInt(bin, 2);
-	constant += 1;
+                // Converte para inteiro
+                constant = parseInt(bin, 2);
+                constant += 1;
 
-	return constant;
-}
+                return constant;
+            }
 
-function B_Type(instruction, line, Op, PC)
-{
-	var rs2 = getRegister(instruction.slice(7, 12));
-	var rs1 = getRegister(instruction.slice(12, 17));
-	var funct3 = instruction.slice(17, 20);
-	var const1 = instruction.slice(9, 12);
-	var const2 = instruction.slice(7, 8);
-	var const3 = instruction.slice(25, 31);
-	var const4 = instruction.slice(31, 32);
+            function B_Type(instruction, line, Op, PC) {
+                var rs2 = getRegister(instruction.slice(7, 12));
+                var rs1 = getRegister(instruction.slice(12, 17));
+                var funct3 = instruction.slice(17, 20);
+                var const1 = instruction.slice(9, 12);
+                var const2 = instruction.slice(7, 8);
+                var const3 = instruction.slice(25, 31);
+                var const4 = instruction.slice(31, 32);
 
-	var reverseinstruction = instruction.split("").reverse().join("");
-	var constant = reverseinstruction[31] + reverseinstruction[7] + reverseinstruction[30] + reverseinstruction[29] + reverseinstruction[28] + reverseinstruction[27] + reverseinstruction[26] + reverseinstruction[25] + reverseinstruction[11] + reverseinstruction[10] + reverseinstruction[9] + reverseinstruction[8] + '0';
+                var reverseinstruction = instruction
+                    .split('')
+                    .reverse()
+                    .join('');
+                var constant =
+                    reverseinstruction[31] +
+                    reverseinstruction[7] +
+                    reverseinstruction[30] +
+                    reverseinstruction[29] +
+                    reverseinstruction[28] +
+                    reverseinstruction[27] +
+                    reverseinstruction[26] +
+                    reverseinstruction[25] +
+                    reverseinstruction[11] +
+                    reverseinstruction[10] +
+                    reverseinstruction[9] +
+                    reverseinstruction[8] +
+                    '0';
 
-	var formatedConstant = (reverseinstruction[31] == '0') ? parseInt(constant, 2) : toC2(constant);
-    var signal = '';
-	if (reverseinstruction[31] == '1')
-		signal = '-';	//constante é negativa
+                var formatedConstant =
+                    reverseinstruction[31] == '0'
+                        ? parseInt(constant, 2)
+                        : toC2(constant);
+                var signal = '';
+                if (reverseinstruction[31] == '1') signal = '-'; //constante é negativa
 
-	if (funct3 == "000")
-	{
-		$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="beq" data-rs1="' + rs1 + '" data-rs2="' + rs2 + '" data-constant="' + signal + '' + formatedConstant + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> beq x' + rs1 + ', x' + rs2 + ', ' + signal + '' + formatedConstant + '</li>');
-	}
-	if (funct3 == "001")
-	{
-		$("ul[class='assembly-result']").append('<li class="assembly-result-line" data-PC="' + PC + '" data-instruction="bne" data-rs1="' + rs1 + '" data-rs2="' + rs2 + '" data-constant="' + signal + '' + formatedConstant + '"><span style="color: red;">[ PC - ' + PC + ' ]</span> bne x' + rs1 + ', x' + rs2 + ', ' + signal + '' + formatedConstant + '</li>');
-	}
-}
+                if (funct3 == '000') {
+                    $("ul[class='assembly-result']").append(
+                        '<li class="assembly-result-line" data-PC="' +
+                            PC +
+                            '" data-instruction="beq" data-rs1="' +
+                            rs1 +
+                            '" data-rs2="' +
+                            rs2 +
+                            '" data-constant="' +
+                            signal +
+                            '' +
+                            formatedConstant +
+                            '"><span style="color: red;">[ PC - ' +
+                            PC +
+                            ' ]</span> beq x' +
+                            rs1 +
+                            ', x' +
+                            rs2 +
+                            ', ' +
+                            signal +
+                            '' +
+                            formatedConstant +
+                            '</li>'
+                    );
+                }
+                if (funct3 == '001') {
+                    $("ul[class='assembly-result']").append(
+                        '<li class="assembly-result-line" data-PC="' +
+                            PC +
+                            '" data-instruction="bne" data-rs1="' +
+                            rs1 +
+                            '" data-rs2="' +
+                            rs2 +
+                            '" data-constant="' +
+                            signal +
+                            '' +
+                            formatedConstant +
+                            '"><span style="color: red;">[ PC - ' +
+                            PC +
+                            ' ]</span> bne x' +
+                            rs1 +
+                            ', x' +
+                            rs2 +
+                            ', ' +
+                            signal +
+                            '' +
+                            formatedConstant +
+                            '</li>'
+                    );
+                }
+            }
 
-/*
+            /*
     Le input do usuário
     @param instructions: array de instruções
     @param Op: objeto de emulação da máquina
 */
-function readInput(instructions, Op)
-{
-	var i = 1;
-	var opcode;
+            function readInput(instructions, Op) {
+                var i = 1;
+                var opcode;
 
-	var PC = 10000;
-	$.each(instructions, function(index, instruction)
-    {
-        // Verifica se a instrução tem 32 bits
-		if (instruction.length === 32)
-		{		
-            // Obtem opcode e chama a função apropriada para os opcodes correspondentes para a criação da amostra assembly
-			opcode = instruction.slice(25, 32);
+                var PC = 10000;
+                $.each(instructions, function (index, instruction) {
+                    // Verifica se a instrução tem 32 bits
+                    if (instruction.length === 32) {
+                        // Obtem opcode e chama a função apropriada para os opcodes correspondentes para a criação da amostra assembly
+                        opcode = instruction.slice(25, 32);
 
-			if (opcode == "1100011")
-				B_Type(instruction, i, Op, PC);
-			else if (opcode == "0110011")
-				R_Type(instruction, i, Op, PC);
-			else if (opcode == "0100011")
-				S_Type(instruction, i, Op, PC);
-			else if (opcode == "0010011" || opcode == "0000011")
-				I_Type(instruction, i, Op, PC);
-            else
-                throw "Opcode inválido";
-        
-            // Incrementa PC+4
-			PC += 4;
+                        if (opcode == '1100011') B_Type(instruction, i, Op, PC);
+                        else if (opcode == '0110011')
+                            R_Type(instruction, i, Op, PC);
+                        else if (opcode == '0100011')
+                            S_Type(instruction, i, Op, PC);
+                        else if (opcode == '0010011' || opcode == '0000011')
+                            I_Type(instruction, i, Op, PC);
+                        else throw 'Opcode inválido';
 
-            i++;
-		}
-		else
-		{
-			return false;
-		}		
-		
-	});
-	return true;
-};
+                        // Incrementa PC+4
+                        PC += 4;
 
-$(document).ready(function() 
-{	
-	var Op;
+                        i++;
+                    } else {
+                        return false;
+                    }
+                });
+                return true;
+            }
 
-	var currentInstructionPC = 10000;
-	var isValidInput = false;
-	var alreadyBacked = false;
-	var runTimeRegisters = [];
-	
-    // Inicializa os registradores para tempo de execução
-	for(let i = 0; i < 32; i++)
-		runTimeRegisters[i] = 0;
+            $(document).ready(function () {
+                var Op;
 
-    // Inicializa a memória para tempo de execução
-	var runTimeMemory = [];
+                var currentInstructionPC = 10000;
+                var isValidInput = false;
+                var alreadyBacked = false;
+                var runTimeRegisters = [];
 
-    // Inicializa o controle de sinal para tempo de execução
-	var runTimeControlSignal = [];
+                // Inicializa os registradores para tempo de execução
+                for (let i = 0; i < 32; i++) runTimeRegisters[i] = 0;
 
-    // Arrays para guardar o passo a passo da execução
-	var stepByStepRegisters = [];
-	var stepByStepMemory = [];
-	var stepByStepPC = [];
+                // Inicializa a memória para tempo de execução
+                var runTimeMemory = [];
 
-    // Prepara máquina ao enviar o código binário das instruções
-	$(".send").unbind().click(function(e) 
-	{
-		Op = new Operations();
-		isValidInput = false;
-		currentInstructionPC = 10000;
-		e.preventDefault();
+                // Inicializa o controle de sinal para tempo de execução
+                var runTimeControlSignal = [];
 
-        // Exibe os containers na tela
-		$("div[class='assembly-result-container']").html('<h3 style="text-align:center;">Resultado em Assembly</h3><ul class="assembly-result"></ul>');
-		$("div[class='registers-result-container']").html('<h3 style="text-align:center;">Valores dos Registradores</h3><ul class="registers-result"></ul>');
-		$("div[class='memory-result-container']").html('<h3 style="text-align:center;">Valores em Memória</h3><ul class="memory-result"><li class="memory-result-line">Não há nada em memória</li></ul>');
-		$("div[class='controlsignal-result-container']").html('<h3 style="text-align:center;">Sinais de Controle</h3><ul class="controlsignal-result"></ul>');
+                // Arrays para guardar o passo a passo da execução
+                var stepByStepRegisters = [];
+                var stepByStepMemory = [];
+                var stepByStepPC = [];
 
-        // Exibe os registradores na tela
-		$.each(runTimeRegisters, function(key, value)
-		{
-			$("ul[class='registers-result']").append('<li class="register-result-line">x' + key + ': ' + value + '</li>');		
-		});
+                // Prepara máquina ao enviar o código binário das instruções
+                $('.send')
+                    .unbind()
+                    .click(function (e) {
+                        Op = new Operations();
+                        isValidInput = false;
+                        currentInstructionPC = 10000;
+                        e.preventDefault();
 
-        // Le as instruções
-		var arrayOfLines = $('.input').val().replace(/ /g,'').split('\n');
-		readInput(arrayOfLines, Op);
-		$("button[class='instruction-action'][id='next']").prop("disabled", false);
-		$("button[class='instruction-action'][id='back']").prop("disabled", true);
-	});
+                        // Exibe os containers na tela
+                        $("div[class='assembly-result-container']").html(
+                            '<h3 style="text-align:center;">Resultado em Assembly</h3><ul class="assembly-result"></ul>'
+                        );
+                        $("div[class='registers-result-container']").html(
+                            '<h3 style="text-align:center;">Valores dos Registradores</h3><ul class="registers-result"></ul>'
+                        );
+                        $("div[class='memory-result-container']").html(
+                            '<h3 style="text-align:center;">Valores em Memória</h3><ul class="memory-result"><li class="memory-result-line">Não há nada em memória</li></ul>'
+                        );
+                        $("div[class='controlsignal-result-container']").html(
+                            '<h3 style="text-align:center;">Sinais de Controle</h3><ul class="controlsignal-result"></ul>'
+                        );
 
-	var rd;
-	var rs1;
-	var rs2;
-	var constant;
-	var jump = false;
-	$(document).on("click", "button[class='instruction-action'][id='next']", function()
-	{
-        // Obtem a instrução do tempo atual de execução
-		var currentInstructionLine = $("li[class='assembly-result-line'][data-pc='" + currentInstructionPC + "']");
+                        // Exibe os registradores na tela
+                        $.each(runTimeRegisters, function (key, value) {
+                            $("ul[class='registers-result']").append(
+                                '<li class="register-result-line">x' +
+                                    key +
+                                    ': ' +
+                                    value +
+                                    '</li>'
+                            );
+                        });
 
-        // --------------- Executa a instrução de acordo com os tipos --------------- 
-		if (currentInstructionLine.data("instruction") == "addi")
-		{
-			rd = currentInstructionLine.data("rd");
-			rs1 = currentInstructionLine.data("rs1");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "00", "Branch": 0, "ALUSrc": 1, "MemToReg": 0, "RegWrite": 1, "MemRead": 0, "MemWrite": 0};
-			Op.Addi(rd, rs1, constant, runTimeRegisters);	
-		}
-		if (currentInstructionLine.data("instruction") == "add" || currentInstructionLine.data("instruction") == "sub" || currentInstructionLine.data("instruction") == "and" || currentInstructionLine.data("instruction") == "or")
-		{
-			rd = currentInstructionLine.data("rd");
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			runTimeControlSignal = {"ALUOp": "10", "Branch": 0, "ALUSrc": 0, "MemToReg": 0, "RegWrite": 1, "MemRead": 0, "MemWrite": 0};
-			if (currentInstructionLine.data("instruction") == "add") 
-				Op.Add(rd, rs1, rs2, runTimeRegisters);
-			if (currentInstructionLine.data("instruction") == "sub") 
-				Op.Sub(rd, rs1, rs2, runTimeRegisters);
-			if (currentInstructionLine.data("instruction") == "and") 
-				Op.And(rd, rs1, rs2, runTimeRegisters);
-			if (currentInstructionLine.data("instruction") == "or") 
-				Op.Or(rd, rs1, rs2, runTimeRegisters);
-		}
-		if (currentInstructionLine.data("instruction") == "sw")
-		{	
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			constant = currentInstructionLine.data("constant");
-			Op.Sw(rs2, constant, rs1, runTimeRegisters, runTimeMemory);
-			runTimeControlSignal = {"ALUOp": "00", "Branch": 0, "ALUSrc": 1, "MemToReg": "-", "RegWrite": 0, "MemRead": 0, "MemWrite": 1};
-		}
-		if (currentInstructionLine.data("instruction") == "lw")
-		{
-			rs1 = currentInstructionLine.data("rs1");
-			rd = currentInstructionLine.data("rd");
-			constant = currentInstructionLine.data("constant");
-			Op.Lw(rd, constant, rs1, runTimeRegisters, runTimeMemory);
-			runTimeControlSignal = {"ALUOp": "00", "Branch": 0, "ALUSrc": 1, "MemToReg": 1, "RegWrite": 1, "MemRead": 1, "MemWrite": 0};
-		}
-		if (currentInstructionLine.data("instruction") == "beq") 
-		{
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "01", "Branch": 1, "ALUSrc": 0, "MemToReg": "-", "RegWrite": 0, "MemRead": 0, "MemWrite": 0};
-			if (Op.Beq(rs1, rs2, runTimeRegisters) == 1)
-				jump = true;
-		}
-		if (currentInstructionLine.data("instruction") == "bne") 
-		{	
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "11", "Branch": 1, "ALUSrc": 0, "MemToReg": 0, "RegWrite": 0, "MemRead": 0, "MemWrite": 0};
-			if (Op.Bne(rs1, rs2, runTimeRegisters) == 1)
-				jump = true;
-		}
+                        // Le as instruções
+                        var arrayOfLines = $('.input')
+                            .val()
+                            .replace(/ /g, '')
+                            .split('\n');
+                        readInput(arrayOfLines, Op);
+                        $("button[class='instruction-action'][id='next']").prop(
+                            'disabled',
+                            false
+                        );
+                        $("button[class='instruction-action'][id='back']").prop(
+                            'disabled',
+                            true
+                        );
+                    });
 
+                var rd;
+                var rs1;
+                var rs2;
+                var constant;
+                var jump = false;
+                $(document).on(
+                    'click',
+                    "button[class='instruction-action'][id='next']",
+                    function () {
+                        // Obtem a instrução do tempo atual de execução
+                        var currentInstructionLine = $(
+                            "li[class='assembly-result-line'][data-pc='" +
+                                currentInstructionPC +
+                                "']"
+                        );
 
-        // --------------------------------------------- Atualiza tela ---------------------------------------------
-    
-		$("li[class='assembly-result-line current-instruction']").removeClass("current-instruction");
-		$("li[class='assembly-result-line'][data-pc='" + currentInstructionPC + "']").toggleClass("current-instruction");
+                        // --------------- Executa a instrução de acordo com os tipos ---------------
+                        if (
+                            currentInstructionLine.data('instruction') == 'addi'
+                        ) {
+                            rd = currentInstructionLine.data('rd');
+                            rs1 = currentInstructionLine.data('rs1');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '00',
+                                Branch: 0,
+                                ALUSrc: 1,
+                                MemToReg: 0,
+                                RegWrite: 1,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                            Op.Addi(rd, rs1, constant, runTimeRegisters);
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') ==
+                                'add' ||
+                            currentInstructionLine.data('instruction') ==
+                                'sub' ||
+                            currentInstructionLine.data('instruction') ==
+                                'and' ||
+                            currentInstructionLine.data('instruction') == 'or'
+                        ) {
+                            rd = currentInstructionLine.data('rd');
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            runTimeControlSignal = {
+                                ALUOp: '10',
+                                Branch: 0,
+                                ALUSrc: 0,
+                                MemToReg: 0,
+                                RegWrite: 1,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                            if (
+                                currentInstructionLine.data('instruction') ==
+                                'add'
+                            )
+                                Op.Add(rd, rs1, rs2, runTimeRegisters);
+                            if (
+                                currentInstructionLine.data('instruction') ==
+                                'sub'
+                            )
+                                Op.Sub(rd, rs1, rs2, runTimeRegisters);
+                            if (
+                                currentInstructionLine.data('instruction') ==
+                                'and'
+                            )
+                                Op.And(rd, rs1, rs2, runTimeRegisters);
+                            if (
+                                currentInstructionLine.data('instruction') ==
+                                'or'
+                            )
+                                Op.Or(rd, rs1, rs2, runTimeRegisters);
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'sw'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            constant = currentInstructionLine.data('constant');
+                            Op.Sw(
+                                rs2,
+                                constant,
+                                rs1,
+                                runTimeRegisters,
+                                runTimeMemory
+                            );
+                            runTimeControlSignal = {
+                                ALUOp: '00',
+                                Branch: 0,
+                                ALUSrc: 1,
+                                MemToReg: '-',
+                                RegWrite: 0,
+                                MemRead: 0,
+                                MemWrite: 1,
+                            };
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'lw'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rd = currentInstructionLine.data('rd');
+                            constant = currentInstructionLine.data('constant');
+                            Op.Lw(
+                                rd,
+                                constant,
+                                rs1,
+                                runTimeRegisters,
+                                runTimeMemory
+                            );
+                            runTimeControlSignal = {
+                                ALUOp: '00',
+                                Branch: 0,
+                                ALUSrc: 1,
+                                MemToReg: 1,
+                                RegWrite: 1,
+                                MemRead: 1,
+                                MemWrite: 0,
+                            };
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'beq'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '01',
+                                Branch: 1,
+                                ALUSrc: 0,
+                                MemToReg: '-',
+                                RegWrite: 0,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                            if (Op.Beq(rs1, rs2, runTimeRegisters) == 1)
+                                jump = true;
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'bne'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '11',
+                                Branch: 1,
+                                ALUSrc: 0,
+                                MemToReg: 0,
+                                RegWrite: 0,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                            if (Op.Bne(rs1, rs2, runTimeRegisters) == 1)
+                                jump = true;
+                        }
 
-		//registers
-		$("div[class='registers-result-container']").html('<h3 style="text-align:center;">Valores dos Registradores</h3><ul class="registers-result"></ul>');
-		$.each(runTimeRegisters, function(key, value)
-		{
-			$("ul[class='registers-result']").append('<li class="register-result-line">x' + key + ': ' + value + '</li>');		
-		});
+                        // --------------------------------------------- Atualiza tela ---------------------------------------------
 
-		//memory
-		$("div[class='memory-result-container']").html('<h3 style="text-align:center;">Valores em Memória</h3><ul class="memory-result"></ul>');
-		var count = 0;
-		$.each(runTimeMemory, function(key, value)
-		{
-			$("ul[class='memory-result']").append('<li class="memory-result-line">mem[' + value.mem_offset + ']: ' + value.mem_value + '</li>');
-			count++;	
-		});
-		if (count == 0)
-			$("ul[class='memory-result']").append('<li class="memory-result-line">Não há nada em memória</li>');
+                        $(
+                            "li[class='assembly-result-line current-instruction']"
+                        ).removeClass('current-instruction');
+                        $(
+                            "li[class='assembly-result-line'][data-pc='" +
+                                currentInstructionPC +
+                                "']"
+                        ).toggleClass('current-instruction');
 
+                        //registers
+                        $("div[class='registers-result-container']").html(
+                            '<h3 style="text-align:center;">Valores dos Registradores</h3><ul class="registers-result"></ul>'
+                        );
+                        $.each(runTimeRegisters, function (key, value) {
+                            $("ul[class='registers-result']").append(
+                                '<li class="register-result-line">x' +
+                                    key +
+                                    ': ' +
+                                    value +
+                                    '</li>'
+                            );
+                        });
 
-		//controlSignals
-		$("div[class='controlsignal-result-container']").html('<h3 style="text-align:center;">Sinais de Controle</h3><ul class="controlsignal-result"></ul>');
-		$.each(runTimeControlSignal, function(key, value)
-		{
-			$("ul[class='controlsignal-result']").append('<li class="controlsignal-result-line">' + key + ': ' + value + '</li>');		
-		});
+                        //memory
+                        $("div[class='memory-result-container']").html(
+                            '<h3 style="text-align:center;">Valores em Memória</h3><ul class="memory-result"></ul>'
+                        );
+                        var count = 0;
+                        $.each(runTimeMemory, function (key, value) {
+                            $("ul[class='memory-result']").append(
+                                '<li class="memory-result-line">mem[' +
+                                    value.mem_offset +
+                                    ']: ' +
+                                    value.mem_value +
+                                    '</li>'
+                            );
+                            count++;
+                        });
+                        if (count == 0)
+                            $("ul[class='memory-result']").append(
+                                '<li class="memory-result-line">Não há nada em memória</li>'
+                            );
 
-		$("button[class='instruction-action'][id='back']").prop("disabled", false);
+                        //controlSignals
+                        $("div[class='controlsignal-result-container']").html(
+                            '<h3 style="text-align:center;">Sinais de Controle</h3><ul class="controlsignal-result"></ul>'
+                        );
+                        $.each(runTimeControlSignal, function (key, value) {
+                            $("ul[class='controlsignal-result']").append(
+                                '<li class="controlsignal-result-line">' +
+                                    key +
+                                    ': ' +
+                                    value +
+                                    '</li>'
+                            );
+                        });
 
+                        $("button[class='instruction-action'][id='back']").prop(
+                            'disabled',
+                            false
+                        );
 
-        // --------------------------------------------- Atualiza histórico de execução ---------------------------------------------
-		stepByStepPC.push(currentInstructionPC);
-		if (jump == true)
-		{
-			currentInstructionPC += constant;
-		}
-		else
-		{
-			currentInstructionPC += 4;
-		}
-		jump = false;
-		var tmp = runTimeRegisters.slice();
-		stepByStepRegisters.push(tmp);
-		tmp = runTimeMemory.slice()
-		stepByStepMemory.push(tmp);
+                        // --------------------------------------------- Atualiza histórico de execução ---------------------------------------------
+                        stepByStepPC.push(currentInstructionPC);
+                        if (jump == true) {
+                            currentInstructionPC += constant;
+                        } else {
+                            currentInstructionPC += 4;
+                        }
+                        jump = false;
+                        var tmp = runTimeRegisters.slice();
+                        stepByStepRegisters.push(tmp);
+                        tmp = runTimeMemory.slice();
+                        stepByStepMemory.push(tmp);
 
-		return false;
-	});
-	$(document).on("click", "button[class='instruction-action'][id='back']", function()
-	{
-		$("li[class='assembly-result-line current-instruction']").removeClass("current-instruction");
-		currentInstructionPC = $(stepByStepPC).get(-1)-4;
+                        return false;
+                    }
+                );
+                $(document).on(
+                    'click',
+                    "button[class='instruction-action'][id='back']",
+                    function () {
+                        $(
+                            "li[class='assembly-result-line current-instruction']"
+                        ).removeClass('current-instruction');
+                        currentInstructionPC = $(stepByStepPC).get(-1) - 4;
 
-		var currentInstructionLine = $("li[class='assembly-result-line'][data-pc='" + currentInstructionPC + "']");
-		currentInstructionLine.toggleClass("current-instruction");
-		if (currentInstructionLine.data("instruction") == "addi")
-		{
-			rd = currentInstructionLine.data("rd");
-			rs1 = currentInstructionLine.data("rs1");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "00", "Branch": 0, "ALUSrc": 1, "MemToReg": 0, "RegWrite": 1, "MemRead": 0, "MemWrite": 0};
-		}
-		if (currentInstructionLine.data("instruction") == "add" || currentInstructionLine.data("instruction") == "sub" || currentInstructionLine.data("instruction") == "and" || currentInstructionLine.data("instruction") == "or")
-		{
-			rd = currentInstructionLine.data("rd");
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			runTimeControlSignal = {"ALUOp": "10", "Branch": 0, "ALUSrc": 0, "MemToReg": 0, "RegWrite": 1, "MemRead": 0, "MemWrite": 0};
-		}
-		if (currentInstructionLine.data("instruction") == "sw")
-		{	
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "00", "Branch": 0, "ALUSrc": 1, "MemToReg": "-", "RegWrite": 0, "MemRead": 0, "MemWrite": 1};
-		}
-		if (currentInstructionLine.data("instruction") == "lw")
-		{
-			rs1 = currentInstructionLine.data("rs1");
-			rd = currentInstructionLine.data("rd");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "00", "Branch": 0, "ALUSrc": 1, "MemToReg": 1, "RegWrite": 1, "MemRead": 1, "MemWrite": 0};
-		}
-		if (currentInstructionLine.data("instruction") == "beq") 
-		{
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "01", "Branch": 1, "ALUSrc": 0, "MemToReg": "-", "RegWrite": 0, "MemRead": 0, "MemWrite": 0};
-		}
-		if (currentInstructionLine.data("instruction") == "bne") 
-		{	
-			rs1 = currentInstructionLine.data("rs1");
-			rs2 = currentInstructionLine.data("rs2");
-			constant = currentInstructionLine.data("constant");
-			runTimeControlSignal = {"ALUOp": "11", "Branch": 1, "ALUSrc": 0, "MemToReg": 0, "RegWrite": 0, "MemRead": 0, "MemWrite": 0};
-		}
-		$("li[class='assembly-result-line'][data-pc='" + currentInstructionPC + "']").toggleClass("current-instruction");
+                        var currentInstructionLine = $(
+                            "li[class='assembly-result-line'][data-pc='" +
+                                currentInstructionPC +
+                                "']"
+                        );
+                        currentInstructionLine.toggleClass(
+                            'current-instruction'
+                        );
+                        if (
+                            currentInstructionLine.data('instruction') == 'addi'
+                        ) {
+                            rd = currentInstructionLine.data('rd');
+                            rs1 = currentInstructionLine.data('rs1');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '00',
+                                Branch: 0,
+                                ALUSrc: 1,
+                                MemToReg: 0,
+                                RegWrite: 1,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') ==
+                                'add' ||
+                            currentInstructionLine.data('instruction') ==
+                                'sub' ||
+                            currentInstructionLine.data('instruction') ==
+                                'and' ||
+                            currentInstructionLine.data('instruction') == 'or'
+                        ) {
+                            rd = currentInstructionLine.data('rd');
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            runTimeControlSignal = {
+                                ALUOp: '10',
+                                Branch: 0,
+                                ALUSrc: 0,
+                                MemToReg: 0,
+                                RegWrite: 1,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'sw'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '00',
+                                Branch: 0,
+                                ALUSrc: 1,
+                                MemToReg: '-',
+                                RegWrite: 0,
+                                MemRead: 0,
+                                MemWrite: 1,
+                            };
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'lw'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rd = currentInstructionLine.data('rd');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '00',
+                                Branch: 0,
+                                ALUSrc: 1,
+                                MemToReg: 1,
+                                RegWrite: 1,
+                                MemRead: 1,
+                                MemWrite: 0,
+                            };
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'beq'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '01',
+                                Branch: 1,
+                                ALUSrc: 0,
+                                MemToReg: '-',
+                                RegWrite: 0,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                        }
+                        if (
+                            currentInstructionLine.data('instruction') == 'bne'
+                        ) {
+                            rs1 = currentInstructionLine.data('rs1');
+                            rs2 = currentInstructionLine.data('rs2');
+                            constant = currentInstructionLine.data('constant');
+                            runTimeControlSignal = {
+                                ALUOp: '11',
+                                Branch: 1,
+                                ALUSrc: 0,
+                                MemToReg: 0,
+                                RegWrite: 0,
+                                MemRead: 0,
+                                MemWrite: 0,
+                            };
+                        }
+                        $(
+                            "li[class='assembly-result-line'][data-pc='" +
+                                currentInstructionPC +
+                                "']"
+                        ).toggleClass('current-instruction');
 
-		//registers
-		$("div[class='registers-result-container']").html('<h3 style="text-align:center;">Valores dos Registradores</h3><ul class="registers-result"></ul>');
-		var tmp;
-		stepByStepRegisters.pop();
-		console.log(stepByStepRegisters);
+                        //registers
+                        $("div[class='registers-result-container']").html(
+                            '<h3 style="text-align:center;">Valores dos Registradores</h3><ul class="registers-result"></ul>'
+                        );
+                        var tmp;
+                        stepByStepRegisters.pop();
+                        console.log(stepByStepRegisters);
 
-		tmp = stepByStepRegisters.slice(-1)[0];
-		var count = 0;
-		$.each(tmp, function(key, value)
-		{
-			$("ul[class='registers-result']").append('<li class="register-result-line">x' + key + ': ' + value + '</li>');
-			count++;
-		});
-		if (count == 0)
-		{
-			currentInstructionPC = 10000;
-			for (var i = 0; i < 31; i++)
-				$("ul[class='registers-result']").append('<li class="register-result-line">x' + i + ': 0</li>');
-		}
-		//controlSignals
-		$("div[class='controlsignal-result-container']").html('<h3 style="text-align:center;">Sinais de Controle</h3><ul class="controlsignal-result"></ul>');
-		$.each(runTimeControlSignal, function(key, value)
-		{
-			$("ul[class='controlsignal-result']").append('<li class="controlsignal-result-line">' + key + ': ' + value + '</li>');		
-		});
-		stepByStepPC.pop();
+                        tmp = stepByStepRegisters.slice(-1)[0];
+                        var count = 0;
+                        $.each(tmp, function (key, value) {
+                            $("ul[class='registers-result']").append(
+                                '<li class="register-result-line">x' +
+                                    key +
+                                    ': ' +
+                                    value +
+                                    '</li>'
+                            );
+                            count++;
+                        });
+                        if (count == 0) {
+                            currentInstructionPC = 10000;
+                            for (var i = 0; i < 31; i++)
+                                $("ul[class='registers-result']").append(
+                                    '<li class="register-result-line">x' +
+                                        i +
+                                        ': 0</li>'
+                                );
+                        }
+                        //controlSignals
+                        $("div[class='controlsignal-result-container']").html(
+                            '<h3 style="text-align:center;">Sinais de Controle</h3><ul class="controlsignal-result"></ul>'
+                        );
+                        $.each(runTimeControlSignal, function (key, value) {
+                            $("ul[class='controlsignal-result']").append(
+                                '<li class="controlsignal-result-line">' +
+                                    key +
+                                    ': ' +
+                                    value +
+                                    '</li>'
+                            );
+                        });
+                        stepByStepPC.pop();
+                    }
+                );
+            });
+        </script>
 
-	});	
-});
+        <style>
+            div.instruction-actions-container {
+                width: 244px;
+                text-align: center;
+                margin-top: 29px;
+                background-color: #c5bcbc;
+                border-radius: 3px;
+                padding: 4px;
+            }
+            button.instruction-action {
+                margin: 3px;
+                cursor: pointer;
+                padding: 4px;
+            }
+            #back {
+                background-color: #f4e4e4;
+            }
+            #next {
+                background-color: #1dff00;
+            }
+            button.send {
+                width: 100%;
+                cursor: pointer;
+            }
+            div.assembly-result-container {
+                position: absolute;
+                width: 230px;
+                height: 95%;
+                left: 261px;
+                top: 7px;
+                background-color: #c3c3c3;
+            }
+            li.assembly-result-line,
+            li.register-result-line,
+            li.memory-result-line,
+            li.controlsignal-result-line {
+                margin-left: 6px;
+                margin-right: 6px;
+            }
+            .current-instruction {
+                background-color: white;
+            }
+            div.registers-result-container {
+                position: absolute;
+                width: 220px;
+                height: 95%;
+                left: 506px;
+                top: 7px;
+                background-color: #a681ff;
+            }
+            div.memory-result-container {
+                position: absolute;
+                width: 220px;
+                height: 95%;
+                left: 740px;
+                top: 7px;
+                background-color: #ff81c1;
+            }
+            div.controlsignal-result-container {
+                position: absolute;
+                width: 220px;
+                height: 95%;
+                left: 973px;
+                top: 7px;
+                background-color: #81e8ff;
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            button {
+                user-select: none;
+            }
+            ul.assembly-result,
+            ul.registers-result,
+            ul.memory-result,
+            ul.controlsignal-result {
+                max-height: 86%;
+                overflow-y: auto;
+            }
+        </style>
+    </head>
 
-</script>
-
-<style>
-div.instruction-actions-container
-{
-	width: 244px;
-    text-align: center;
-    margin-top: 29px;
-    background-color: #c5bcbc;
-    border-radius: 3px;
-    padding: 4px;
-}
-button.instruction-action
-{
-    margin: 3px;
-	cursor: pointer;
-    padding: 4px;
-}
-#back
-{
-	background-color: #f4e4e4;
-}
-#next
-{
-	background-color: #1dff00;
-}
-button.send
-{
-	width: 100%;
-	cursor: pointer;
-}
-div.assembly-result-container
-{
-	position: absolute;
-	width: 230px;
-    height: 95%;
-    left: 261px;
-    top: 7px;
-    background-color: #c3c3c3;
-}
-li.assembly-result-line, li.register-result-line, li.memory-result-line, li.controlsignal-result-line
-{
-	margin-left: 6px;
-	margin-right: 6px;
-}
-.current-instruction
-{
-	background-color: white;
-}
-div.registers-result-container
-{
-	position: absolute;
-    width: 220px;
-    height: 95%;
-    left: 506px;
-    top: 7px;
-    background-color: #a681ff;	
-}
-div.memory-result-container
-{
-    position: absolute;
-    width: 220px;
-    height: 95%;
-    left: 740px;
-    top: 7px;
-    background-color: #ff81c1;	
-}
-div.controlsignal-result-container
-{
-	position: absolute;
-    width: 220px;
-    height: 95%;
-    left: 973px;
-    top: 7px;
-    background-color: #81e8ff;
-}
-ul 
-{
-	list-style: none;
-	padding: 0;
-}
-button
-{
-	user-select: none;
-}
-ul.assembly-result, ul.registers-result, ul.memory-result, ul.controlsignal-result
-{
-    max-height: 86%;
-    overflow-y: auto;	
-}
-</style>
-	</head>
-	
-
-	
-	<body>
-		<div>
-			<div>
-<textarea class="input" cols="32" rows="20" placeholder="Cole seu conjunto de instruções aqui!" style="resize: none;">
+    <body>
+        <div>
+            <div>
+                <textarea
+                    class="input"
+                    cols="32"
+                    rows="20"
+                    placeholder="Cole seu conjunto de instruções aqui!"
+                    style="resize: none"
+                >
 00000000000100000000100000010011
 00000000000000000000100010010011
 00000000010100000000100100010011
 00000001001010000000011001100011
 00000001000010001000100010110011
 01000001000010010000100100110011
-11111111000010000000100011100011</textarea>
-			</div>
-			<div style="width: 244px;">
-				<button class="send">Enviar</button>
-			</div>
-			<div class="instruction-actions-container">
-				<button class="instruction-action" id="back" disabled>Voltar Instrução</button>
-				<button class="instruction-action" id="next" disabled>Avançar Instrução</button>
-			</div>
-		</div>
-			<div class="assembly-result-container"><h3 style="text-align:center;">Resultado em Assembly</h3><ul class="assembly-result"></ul></div>
-			<div class="registers-result-container"><h3 style="text-align:center;">Valores dos Registradores</h3><ul class="registers-result"></ul></div>
-			<div class="memory-result-container"><h3 style="text-align:center;">Valores em Memória</h3><ul class="memory-result"></ul></div>
-			<div class="controlsignal-result-container"><h3 style="text-align:center;">Sinais de Controle</h3><ul class="controlsignal-result"><li class="controlsignal-result-line"></li></ul></div>
-	</body>
+11111111000010000000100011100011</textarea
+                >
+            </div>
+            <div style="width: 244px">
+                <button class="send">Enviar</button>
+            </div>
+            <div class="instruction-actions-container">
+                <button class="instruction-action" id="back" disabled>
+                    Voltar Instrução
+                </button>
+                <button class="instruction-action" id="next" disabled>
+                    Avançar Instrução
+                </button>
+            </div>
+        </div>
+        <div class="assembly-result-container">
+            <h3 style="text-align: center">Resultado em Assembly</h3>
+            <ul class="assembly-result"></ul>
+        </div>
+        <div class="registers-result-container">
+            <h3 style="text-align: center">Valores dos Registradores</h3>
+            <ul class="registers-result"></ul>
+        </div>
+        <div class="memory-result-container">
+            <h3 style="text-align: center">Valores em Memória</h3>
+            <ul class="memory-result"></ul>
+        </div>
+        <div class="controlsignal-result-container">
+            <h3 style="text-align: center">Sinais de Controle</h3>
+            <ul class="controlsignal-result">
+                <li class="controlsignal-result-line"></li>
+            </ul>
+        </div>
+    </body>
 </html>

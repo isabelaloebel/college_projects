@@ -1,0 +1,691 @@
+<mxfile host="app.diagrams.net" modified="2024-04-22T02:45:20.704Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" version="24.2.7" etag="Z7x4yVNGu2J_3VxzGJ2E" type="device">
+  <diagram id="8A2paERjvQDNR7sD8-nl" name="Page-1">
+    <mxGraphModel dx="3928" dy="-2557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="4" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="68" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="2" vertex="1" connectable="0">
+          <mxGeometry x="0.4078" y="2" relative="1" as="geometry">
+            <mxPoint x="30" y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="4" target="37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="74" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="3" vertex="1" connectable="0">
+          <mxGeometry x="-0.1553" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4" value="&lt;div&gt;Você costuma comer alimentos ricos em fibras, como grãos integrais e legumes?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-930" y="3890" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.442;entryY=-0.008;entryDx=0;entryDy=0;fontSize=23;entryPerimeter=0;" parent="1" source="6" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1684" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="5" vertex="1" connectable="0">
+          <mxGeometry x="0.1207" y="3" relative="1" as="geometry">
+            <mxPoint y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" value="&lt;div&gt;Você lê os rótulos dos alimentos para verificar os ingredientes e o valor nutricional?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1657" y="4320" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7" style="edgeStyle=none;html=1;exitX=0.658;exitY=0.947;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;exitPerimeter=0;" parent="1" source="9" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="7" vertex="1" connectable="0">
+          <mxGeometry x="0.3983" relative="1" as="geometry">
+            <mxPoint x="-7" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="9" target="12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="70" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="8" vertex="1" connectable="0">
+          <mxGeometry x="0.4222" y="-3" relative="1" as="geometry">
+            <mxPoint x="19" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="Você pratica atividade física regularmente?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1765" y="4190" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="10" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="11" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="69" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="10" vertex="1" connectable="0">
+          <mxGeometry x="0.3104" relative="1" as="geometry">
+            <mxPoint x="9" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="&lt;div&gt;Você tem aversões a temperos/ingredientes como, cebola, cheiro verde e alho?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1560" y="4040" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="ATENÇÃO SUPERFICIAL" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1870" y="4320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="13" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="14" target="58" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1640.5" y="4570" as="sourcePoint" />
+            <mxPoint x="-1672" y="4640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="73" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="13" vertex="1" connectable="0">
+          <mxGeometry x="0.3167" y="-2" relative="1" as="geometry">
+            <mxPoint x="11" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="&lt;span style=&quot;line-height: 107%;&quot;&gt;Você&lt;br&gt;costuma consumir pelo menos três refeições principais por dia?&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1765" y="4490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="15" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="17" target="20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="15" vertex="1" connectable="0">
+          <mxGeometry x="0.2341" y="4" relative="1" as="geometry">
+            <mxPoint x="14" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="17" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="67" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="16" vertex="1" connectable="0">
+          <mxGeometry x="-0.076" y="-1" relative="1" as="geometry">
+            <mxPoint x="21" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" value="&lt;div&gt;Você consome alimentos ricos em gorduras saturadas regularmente, como fast food ou frituras?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1600" y="3670" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="18" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="20" target="22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="18" vertex="1" connectable="0">
+          <mxGeometry x="-0.3954" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="20" target="25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="19" vertex="1" connectable="0">
+          <mxGeometry x="0.3271" y="-4" relative="1" as="geometry">
+            <mxPoint x="-22" y="-29" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-2285" y="3890" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="21" style="edgeStyle=none;html=1;exitX=0.234;exitY=1.012;exitDx=0;exitDy=0;entryX=0.416;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=23;exitPerimeter=0;" parent="1" source="22" target="23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="21" vertex="1" connectable="0">
+          <mxGeometry x="0.3642" y="-1" relative="1" as="geometry">
+            <mxPoint x="9" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="&lt;span style=&quot;font-size: 12px; line-height: 107%;&quot;&gt;Você&lt;br style=&quot;font-size: 12px;&quot;&gt;inclui legumes e vegetais em todas as suas refeições principais?&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-2480" y="4040" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="ATENÇÃO MODERADA" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-2525" y="4180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="24" style="edgeStyle=none;html=1;exitX=0.213;exitY=1.044;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;exitPerimeter=0;" parent="1" source="25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2140" y="4190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="63" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="24" vertex="1" connectable="0">
+          <mxGeometry x="0.3032" y="1" relative="1" as="geometry">
+            <mxPoint x="5" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="Você ingere água regularmente ao longo do dia?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-2120" y="4040" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="26" style="edgeStyle=none;html=1;exitX=0.141;exitY=0.997;exitDx=0;exitDy=0;entryX=0.479;entryY=-0.003;entryDx=0;entryDy=0;fontSize=23;entryPerimeter=0;exitPerimeter=0;" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-94" target="NNtHA5l5W2_T8wU1oUWQ-93" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2225" y="4270" as="sourcePoint" />
+            <mxPoint x="-2260" y="4320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="64" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="26" vertex="1" connectable="0">
+          <mxGeometry x="0.3505" y="1" relative="1" as="geometry">
+            <mxPoint x="3" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="28" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" target="31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2175" y="4400" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="66" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="28" vertex="1" connectable="0">
+          <mxGeometry x="0.3671" y="-3" relative="1" as="geometry">
+            <mxPoint x="-14" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" style="edgeStyle=none;html=1;exitX=0.159;exitY=1.036;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;exitPerimeter=0;" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-93" target="34" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2345" y="4400" as="sourcePoint" />
+            <mxPoint x="-2390" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="29" vertex="1" connectable="0">
+          <mxGeometry x="0.2698" y="-1" relative="1" as="geometry">
+            <mxPoint x="4" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="ATENÇÃO TOTAL" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-2220" y="4490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="ATENÇÃO MODERADA" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-2360" y="4490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="35" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="37" target="40" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="75" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="35" vertex="1" connectable="0">
+          <mxGeometry x="0.0749" relative="1" as="geometry">
+            <mxPoint x="16" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="36" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" parent="1" source="37" target="52" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-100" y="4220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="76" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="36" vertex="1" connectable="0">
+          <mxGeometry x="-0.1192" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37" value="Você controla o tamanho das porções que consome em cada refeição?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-300" y="4050" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="38" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.433;entryY=0.001;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="40" edge="1" target="42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-555" y="4370.000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="78" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="38" vertex="1" connectable="0">
+          <mxGeometry x="0.2072" y="2" relative="1" as="geometry">
+            <mxPoint x="-13" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="39" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="40" target="44" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="77" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="39" vertex="1" connectable="0">
+          <mxGeometry x="0.3174" y="-2" relative="1" as="geometry">
+            <mxPoint x="11" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="40" value="&lt;div&gt;Você lê os rótulos dos alimentos para verificar os ingredientes e o valor nutricional?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-780" y="4190" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="41" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="49" edge="1" source="42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-625" y="4400.000000000001" as="sourcePoint" />
+            <mxPoint x="-690" y="4470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="81" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="41" vertex="1" connectable="0">
+          <mxGeometry x="0.3699" y="-1" relative="1" as="geometry">
+            <mxPoint x="16" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="42" value="&lt;div&gt;Você mastiga bem os alimentos antes de engolir?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-490" y="4320" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="43" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="44" target="46" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="79" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="43" vertex="1" connectable="0">
+          <mxGeometry x="0.4595" y="-2" relative="1" as="geometry">
+            <mxPoint x="23" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="44" value="Você ingere água regularmente ao longo do dia?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1030" y="4320" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="45" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="46" target="NNtHA5l5W2_T8wU1oUWQ-143" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1210" y="4610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="80" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="45" vertex="1" connectable="0">
+          <mxGeometry x="0.3612" relative="1" as="geometry">
+            <mxPoint x="16" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46" value="Você pratica atividade física regularmente?" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1170" y="4490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="47" value="ATENÇÃO SUPERFICIAL" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1307" y="4780" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="48" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="49" target="50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="82" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="48" vertex="1" connectable="0">
+          <mxGeometry x="0.3157" y="-3" relative="1" as="geometry">
+            <mxPoint x="12" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="49" value="&lt;div&gt;Você costuma&amp;nbsp; fazer uso de telas enquanto se alimenta? (celulares, TVs, tablet, etc)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-630" y="4490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="ATENÇÃO&amp;nbsp; MODERADA" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-670" y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="51" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="52" target="54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="190" y="4307" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="83" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="51" vertex="1" connectable="0">
+          <mxGeometry x="0.3556" relative="1" as="geometry">
+            <mxPoint x="14" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="52" value="&lt;div&gt;Você mastiga bem os alimentos antes de engolir?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="4190" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="53" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="54" target="NNtHA5l5W2_T8wU1oUWQ-197" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-5.000000000000455" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="84" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="53" vertex="1" connectable="0">
+          <mxGeometry x="0.2637" relative="1" as="geometry">
+            <mxPoint x="2" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="54" value="&lt;div&gt;Você cozinha a maioria das suas refeições?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="4320" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="55" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-197" target="NNtHA5l5W2_T8wU1oUWQ-199" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-47.500000000000455" y="4570" as="sourcePoint" />
+            <mxPoint x="-80" y="4640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="85" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="55" vertex="1" connectable="0">
+          <mxGeometry x="0.2887" y="4" relative="1" as="geometry">
+            <mxPoint x="5" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="58" value="ALIMENTAÇÃO SAUDÁVEL" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1810" y="4637" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-87" value="ATENÇÃO TOTAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2390" y="4180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-89" style="edgeStyle=none;html=1;exitX=0.694;exitY=1.034;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;exitPerimeter=0;" edge="1" parent="1" source="22" target="NNtHA5l5W2_T8wU1oUWQ-87">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2425" y="4130" as="sourcePoint" />
+            <mxPoint x="-2495" y="4190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-90" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-89">
+          <mxGeometry x="0.3642" y="-1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-93" value="Você pratica atividade física regularmente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2305" y="4320" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-94" value="&lt;div&gt;Você costuma comer alimentos ricos em fibras, como grãos integrais e legumes?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2220" y="4190" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-95" value="ATENÇÃO TOTAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2010" y="4190" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-96" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1" source="25" target="NNtHA5l5W2_T8wU1oUWQ-95">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1966" y="4124" as="sourcePoint" />
+            <mxPoint x="-2020" y="4190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-97" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-96">
+          <mxGeometry x="0.3032" y="1" relative="1" as="geometry">
+            <mxPoint x="-7" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-98" value="ATENÇÃO TOTAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2115" y="4320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-100" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1" target="NNtHA5l5W2_T8wU1oUWQ-98">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2080" y="4270" as="sourcePoint" />
+            <mxPoint x="-2040" y="4330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-101" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-100">
+          <mxGeometry x="0.3032" y="1" relative="1" as="geometry">
+            <mxPoint x="-7" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-105" value="ALIMENTAÇÃO SAUDÁVEL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1400" y="4320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-110" style="edgeStyle=none;html=1;exitX=0.803;exitY=0.998;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;exitPerimeter=0;" edge="1" parent="1" source="11" target="NNtHA5l5W2_T8wU1oUWQ-129">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1320" y="4270" as="sourcePoint" />
+            <mxPoint x="-1278" y="4335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-111" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-110">
+          <mxGeometry x="0.4222" y="-3" relative="1" as="geometry">
+            <mxPoint x="-33" y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-115" value="ATENÇÃO MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1685" y="4637" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-116" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1" source="14" target="NNtHA5l5W2_T8wU1oUWQ-115">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1567.5700000000002" y="4570" as="sourcePoint" />
+            <mxPoint x="-1572" y="4635.84" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-117" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-116">
+          <mxGeometry x="0.3167" y="-2" relative="1" as="geometry">
+            <mxPoint x="-4" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-119" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1" source="6" target="NNtHA5l5W2_T8wU1oUWQ-136">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1539" y="4400" as="sourcePoint" />
+            <mxPoint x="-1425" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-120" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-119">
+          <mxGeometry x="0.1207" y="3" relative="1" as="geometry">
+            <mxPoint x="-6" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-129" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1350" y="4190" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-130" value="ATENÇÃO SUPERFICIAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1260" y="4320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-131" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1" target="NNtHA5l5W2_T8wU1oUWQ-105">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1306.5" y="4270" as="sourcePoint" />
+            <mxPoint x="-1373.5" y="4359" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-132" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-131">
+          <mxGeometry x="0.1207" y="3" relative="1" as="geometry">
+            <mxPoint y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-133" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1" target="NNtHA5l5W2_T8wU1oUWQ-130">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1226.5" y="4270" as="sourcePoint" />
+            <mxPoint x="-1260" y="4320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-134" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-133">
+          <mxGeometry x="0.1207" y="3" relative="1" as="geometry">
+            <mxPoint y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-136" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1520" y="4490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-137" value="ALIMENTAÇÃO SAUDÁVEL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1550" y="4637" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-138" value="ATENÇÃO SUPERFICIAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1425" y="4637" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-139" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1473" y="4570" as="sourcePoint" />
+            <mxPoint x="-1500" y="4637" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-140" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-139">
+          <mxGeometry x="0.3167" y="-2" relative="1" as="geometry">
+            <mxPoint x="11" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-141" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=23;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1388" y="4570" as="sourcePoint" />
+            <mxPoint x="-1360" y="4637" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-142" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-141">
+          <mxGeometry x="0.3167" y="-2" relative="1" as="geometry">
+            <mxPoint x="-4" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-143" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1257" y="4639" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-144" value="ATENÇÃO MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1179" y="4780" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-145" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-143" target="47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1227" y="4713" as="sourcePoint" />
+            <mxPoint x="-1290" y="4780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-146" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-145">
+          <mxGeometry x="0.3612" relative="1" as="geometry">
+            <mxPoint x="12" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-147" style="edgeStyle=none;html=1;exitX=0.645;exitY=1.037;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-143" target="NNtHA5l5W2_T8wU1oUWQ-144">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1180" y="4727" as="sourcePoint" />
+            <mxPoint x="-1238" y="4790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-148" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-147">
+          <mxGeometry x="0.3612" relative="1" as="geometry">
+            <mxPoint x="-6" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-149" value="ATENÇÃO MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1080" y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-150" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="46" target="NNtHA5l5W2_T8wU1oUWQ-149">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1053.5" y="4573" as="sourcePoint" />
+            <mxPoint x="-1116.5" y="4640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-151" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-150">
+          <mxGeometry x="0.3612" relative="1" as="geometry">
+            <mxPoint x="-3" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-153" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-890" y="4490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-154" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="44" target="NNtHA5l5W2_T8wU1oUWQ-153">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-875" y="4400" as="sourcePoint" />
+            <mxPoint x="-970" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-155" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-154">
+          <mxGeometry x="0.4595" y="-2" relative="1" as="geometry">
+            <mxPoint x="4" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-156" value="ATENÇÃO&amp;nbsp; SUPERFICIAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-930" y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-157" value="ATENÇÃO&amp;nbsp; MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-158" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-153" target="NNtHA5l5W2_T8wU1oUWQ-156">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-850" y="4570" as="sourcePoint" />
+            <mxPoint x="-828" y="4640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-159" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-158">
+          <mxGeometry x="0.3612" relative="1" as="geometry">
+            <mxPoint x="6" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-161" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-153" target="NNtHA5l5W2_T8wU1oUWQ-157">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-767" y="4570" as="sourcePoint" />
+            <mxPoint x="-810" y="4640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-162" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-161">
+          <mxGeometry x="0.3612" relative="1" as="geometry">
+            <mxPoint x="-3" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-163" value="ATENÇÃO SUPERFICIAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-545" y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-164" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="49" target="NNtHA5l5W2_T8wU1oUWQ-163">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-478" y="4570" as="sourcePoint" />
+            <mxPoint x="-530" y="4640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-165" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-164">
+          <mxGeometry x="0.3157" y="-3" relative="1" as="geometry">
+            <mxPoint x="-3" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-166" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="4490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-167" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="42" target="NNtHA5l5W2_T8wU1oUWQ-166">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-377" y="4400" as="sourcePoint" />
+            <mxPoint x="-445" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-168" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-167">
+          <mxGeometry x="0.3699" y="-1" relative="1" as="geometry">
+            <mxPoint x="-5" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-169" value="ATENÇÃO&amp;nbsp; TOTAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-275" y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-170" value="ATENÇÃO MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-401" y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-171" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-166" target="NNtHA5l5W2_T8wU1oUWQ-170">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-320" y="4560" as="sourcePoint" />
+            <mxPoint x="-308" y="4630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-172" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-171">
+          <mxGeometry x="0.3157" y="-3" relative="1" as="geometry">
+            <mxPoint x="6" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-173" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-166" target="NNtHA5l5W2_T8wU1oUWQ-169">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-187" y="4580" as="sourcePoint" />
+            <mxPoint x="-230" y="4650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-174" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-173">
+          <mxGeometry x="0.3157" y="-3" relative="1" as="geometry">
+            <mxPoint x="-3" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-176" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-197" target="NNtHA5l5W2_T8wU1oUWQ-198">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="37.499999999999545" y="4570" as="sourcePoint" />
+            <mxPoint x="74.99999999999955" y="4630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-177" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-176">
+          <mxGeometry x="0.2887" y="4" relative="1" as="geometry">
+            <mxPoint x="-11" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-185" value="ATENÇÃO&amp;nbsp; MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="4490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-186" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="54" target="NNtHA5l5W2_T8wU1oUWQ-185">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="118" y="4400" as="sourcePoint" />
+            <mxPoint x="80" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-187" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-186">
+          <mxGeometry x="0.2637" relative="1" as="geometry">
+            <mxPoint x="2" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-188" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="255" y="4320" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-189" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="NNtHA5l5W2_T8wU1oUWQ-188">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="255" y="4280" as="sourcePoint" />
+            <mxPoint x="187" y="4330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-190" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-189">
+          <mxGeometry x="0.3556" relative="1" as="geometry">
+            <mxPoint x="-24" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-191" value="ATENÇÃO&amp;nbsp; SUPERICIAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="4490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-192" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-188" target="NNtHA5l5W2_T8wU1oUWQ-191">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="307" y="4400" as="sourcePoint" />
+            <mxPoint x="270" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-193" value="Sim" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-192">
+          <mxGeometry x="0.2637" relative="1" as="geometry">
+            <mxPoint x="2" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-194" value="ATENÇÃO&amp;nbsp; MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="4490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-195" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NNtHA5l5W2_T8wU1oUWQ-188" target="NNtHA5l5W2_T8wU1oUWQ-194">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="377" y="4400" as="sourcePoint" />
+            <mxPoint x="360" y="4490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-196" value="Não" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="NNtHA5l5W2_T8wU1oUWQ-195">
+          <mxGeometry x="0.2637" relative="1" as="geometry">
+            <mxPoint x="2" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-197" value="Você faz o consumo de frutas diariamente?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-90" y="4490" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-198" value="ATENÇÃO&amp;nbsp; MODERADA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="4640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NNtHA5l5W2_T8wU1oUWQ-199" value="ATENÇÃO SUPERFICIAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="4639" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

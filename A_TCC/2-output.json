@@ -1,0 +1,28 @@
+[
+    {
+        "sequencia": 1,
+        "Inicio ": "+000000000 23:18:29.692800000",
+        "Fim": "+000000000 23:29:05.683200000",
+        "cod_empresa": 41235,
+        "nome_empresa": "FABIANA CASTAGNARO C.DA SILVA",
+        "mat_pessoa": 42179,
+        "nome_pessoa": "NATHALIA DE PAULA S MARTINS",
+        "cod_empresa_pessoa": 499,
+        "num_rg_pessoa": "800074026",
+        "fim_cont_emp": "17/10/2028",
+        "nr_contrato": "4500071958"
+    },
+    {
+        "sequencia": 2,
+        "Inicio ": "+000000000 23:32:49.891200000",
+        "Fim ": "+000000000 23:40:57.014400000",
+        "cod_empresa": 41235,
+        "nome_empresa": "FABIANA CASTAGNARO C.DA SILVA",
+        "mat_pessoa": 42251,
+        "nome_pessoa": "VICTOR ALEXANDRE DA LUZ HELENO",
+        "cod_empresa_pessoa": 499,
+        "num_rg_pessoa": "100138786",
+        "fim_cont_emp": "17/10/2028",
+        "nr_contrato": "4500071958"
+    }
+]

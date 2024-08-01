@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.senior.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:dados>
+         <user></user>
+         <password></password>
+         <encryption></encryption>
+         <parameters>
+            <!--Optional:-->
+            <contrato>${nr_contrato}</contrato>
+            <!--Optional:-->
+            <flowInstanceID></flowInstanceID>
+            <!--Optional:-->
+            <flowName></flowName>
+            <!--Optional:-->
+            <matricula>${nr_matricula}</matricula>
+            <!--Optional:-->
+            <qregistros>${qtd_registro}</qregistros>
+         </parameters>
+      </ser:dados>
+   </soapenv:Body>
+</soapenv:Envelope>

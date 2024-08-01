@@ -1,0 +1,26 @@
+WB = *escreve reg
+     *pega da ula 
+Tipo R - RD = x19
+
+MEM = *escreve reg
+      *pega memoria
+      *branch = 0
+      *lê da memoria
+      *n escreve na memoria
+load/lw - rd = x8
+
+EX = *escreve reg
+     *alu
+     *nada branch, nada memoria
+     *10 = olhar funct3/funct7
+     *
+
+Tipo R - and, rd = x18, rs2 = x5, rs1 = x4 → and x18, x4, x5
+
+rs1 = x8: 12
+rs2 = x4: 10
+
+bne rs1, rs2, imm[rd]
+bne x8, x4, 7[rd]
+IF = não há como saber.
+
